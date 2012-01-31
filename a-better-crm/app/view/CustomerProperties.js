@@ -8,16 +8,124 @@
  * License of Sencha Designer does not include license for Ext JS 4.0.x. For more
  * details see http://www.sencha.com/license or contact license@sencha.com.
  *
- * You should implement event handling and custom methods in this
- * class.
+ * This file will be auto-generated each and everytime you save your project.
+ *
+ * Do NOT hand edit this file.
  */
 
 Ext.define('MyApp.view.CustomerProperties', {
-    extend: 'MyApp.view.ui.CustomerProperties',
+    extend: 'Ext.window.Window',
     alias: 'widget.customerproperties',
+
+    autoRender: false,
+    height: 288,
+    width: 421,
+    layout: {
+        type: 'fit'
+    },
+    title: 'Customer properties',
+    modal: true,
 
     initComponent: function() {
         var me = this;
+
+        Ext.applyIf(me, {
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    ui: 'footer',
+                    dock: 'bottom',
+                    items: [
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            id: 'btnOk',
+                            text: 'Ok'
+                        },
+                        {
+                            xtype: 'button',
+                            id: 'btnCancel',
+                            text: 'Cancel'
+                        }
+                    ]
+                }
+            ],
+            items: [
+                {
+                    xtype: 'form',
+                    frame: true,
+                    id: 'customerproperties',
+                    bodyPadding: 10,
+                    frameHeader: false,
+                    preventHeader: true,
+                    items: [
+                        {
+                            xtype: 'displayfield',
+                            name: 'id',
+                            fieldLabel: 'Id'
+                        },
+                        {
+                            xtype: 'textfield',
+                            name: 'name',
+                            fieldLabel: 'Name',
+                            anchor: '100%'
+                        },
+                        {
+                            xtype: 'textfield',
+                            name: 'email',
+                            fieldLabel: 'Email',
+                            anchor: '100%'
+                        },
+                        {
+                            xtype: 'numberfield',
+                            name: 'age',
+                            fieldLabel: 'Age',
+                            anchor: '100%'
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            id: 'active',
+                            name: 'active',
+                            fieldLabel: 'Active',
+                            boxLabel: 'Customer is active',
+                            checked: true,
+                            anchor: '100%'
+                        },
+                        {
+                            xtype: 'radiogroup',
+                            height: 53,
+                            id: '',
+                            layout: {
+                                align: 'stretch',
+                                type: 'vbox'
+                            },
+                            fieldLabel: 'Gender',
+                            allowBlank: false,
+                            columns: 1,
+                            items: [
+                                {
+                                    xtype: 'radiofield',
+                                    name: 'gender',
+                                    boxLabel: 'Male',
+                                    inputValue: 0,
+                                    flex: 1
+                                },
+                                {
+                                    xtype: 'radiofield',
+                                    name: 'gender',
+                                    boxLabel: 'Female',
+                                    inputValue: 1,
+                                    flex: 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        });
+
         me.callParent(arguments);
     }
 

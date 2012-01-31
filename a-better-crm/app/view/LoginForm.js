@@ -8,16 +8,68 @@
  * License of Sencha Designer does not include license for Ext JS 4.0.x. For more
  * details see http://www.sencha.com/license or contact license@sencha.com.
  *
- * You should implement event handling and custom methods in this
- * class.
+ * This file will be auto-generated each and everytime you save your project.
+ *
+ * Do NOT hand edit this file.
  */
 
 Ext.define('MyApp.view.LoginForm', {
-    extend: 'MyApp.view.ui.LoginForm',
+    extend: 'Ext.form.Panel',
     alias: 'widget.loginform',
+
+    draggable: true,
+    floating: true,
+    frame: true,
+    height: 155,
+    width: 302,
+    bodyPadding: 10,
+    title: 'Login',
+    url: '/cgi-bin/a_better_crm/login/check',
 
     initComponent: function() {
         var me = this;
+
+        me.initialConfig = Ext.apply({
+            url: '/cgi-bin/a_better_crm/login/check'
+        }, me.initialConfig);
+
+        Ext.applyIf(me, {
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    ui: 'footer',
+                    dock: 'bottom',
+                    items: [
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            id: 'btnSubmit',
+                            text: 'Login'
+                        }
+                    ]
+                }
+            ],
+            items: [
+                {
+                    xtype: 'textfield',
+                    name: 'userName',
+                    fieldLabel: 'Username',
+                    allowBlank: false,
+                    anchor: '100%'
+                },
+                {
+                    xtype: 'textfield',
+                    inputType: 'password',
+                    name: 'passWord',
+                    fieldLabel: 'Password',
+                    allowBlank: false,
+                    anchor: '100%'
+                }
+            ]
+        });
+
         me.callParent(arguments);
     }
 

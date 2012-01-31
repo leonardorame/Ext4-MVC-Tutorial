@@ -25,10 +25,5 @@ Ext.define('MyApp.model.User', {
             name: 'loggedIn',
             type: 'boolean'
         }
-    ],
-
-    proxy: {
-        type: 'localstorage',
-        id: 'userpreference'
-    }
+    ]
 });

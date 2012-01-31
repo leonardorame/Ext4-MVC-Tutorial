@@ -41,7 +41,7 @@ Ext.application({
     launch: function() {
         var user = this.getController('MyApp.controller.User').getUser();
 
-        if(!user.data.loggedIn) {
+        if(user.loggedIn == "false") {
             Ext.create('MyApp.view.LoginForm', {}).show();
         }
         else

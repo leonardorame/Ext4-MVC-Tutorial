@@ -8,16 +8,85 @@
  * License of Sencha Designer does not include license for Ext JS 4.0.x. For more
  * details see http://www.sencha.com/license or contact license@sencha.com.
  *
- * You should implement event handling and custom methods in this
- * class.
+ * This file will be auto-generated each and everytime you save your project.
+ *
+ * Do NOT hand edit this file.
  */
 
 Ext.define('MyApp.view.CustomerGrid', {
-    extend: 'MyApp.view.ui.CustomerGrid',
+    extend: 'Ext.grid.Panel',
     alias: 'widget.customergrid',
+
+    autoShow: true,
+    id: 'customergrid',
+    title: 'Customer\'s listing',
+    forceFit: true,
+    store: 'Customers',
 
     initComponent: function() {
         var me = this;
+
+        Ext.applyIf(me, {
+            viewConfig: {
+
+            },
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    width: 400,
+                    dock: 'top',
+                    items: [
+                        {
+                            xtype: 'button',
+                            id: 'btnEdit',
+                            icon: 'icons/edit.png',
+                            text: 'Edit'
+                        },
+                        {
+                            xtype: 'button',
+                            id: 'btnInsert',
+                            icon: 'icons/insert.png',
+                            text: 'Insert'
+                        },
+                        {
+                            xtype: 'button',
+                            id: 'btnDelete',
+                            icon: 'icons/delete.png',
+                            text: 'Delete'
+                        },
+                        {
+                            xtype: 'button',
+                            id: 'btnRefresh',
+                            icon: 'icons/refresh.png',
+                            text: 'Refresh'
+                        }
+                    ]
+                }
+            ],
+            columns: [
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'id',
+                    text: 'Id'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'name',
+                    text: 'Name'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'email',
+                    text: 'Email'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'age',
+                    text: 'Age'
+                }
+            ]
+        });
+
         me.callParent(arguments);
     }
 

@@ -8,45 +8,41 @@
  * License of Sencha Designer does not include license for Ext JS 4.0.x. For more
  * details see http://www.sencha.com/license or contact license@sencha.com.
  *
- * You should implement event handling and custom methods in this
- * class.
+ * This file will be auto-generated each and everytime you save your project.
+ *
+ * Do NOT hand edit this file.
  */
 
 Ext.define('MyApp.controller.User', {
     extend: 'Ext.app.Controller',
 
-    stores: [
+    models: [
         'User'
+    ],
+    stores: [
+        
     ],
     init: function() {
         this.control({
         });
-
-        var me = this;
-        var store = this.getUserStore();
-        store.load();
-
-        user = store.first();
-        if(!user){
-            store.add({loggedIn: false});
-            user = store.first();
-            store.sync();
-        }
-
     },
 
     saveSession: function() {
-        user.set('loggedIn', true);
-        user.save();
+        Ext.util.Cookies.set('loggedIn', true);
     },
 
     deleteSession: function() {
-        user.destroy();
-        var store = this.getUserStore();
-        store.sync();
+        Ext.util.Cookies.set('loggedIn', false);
+
     },
 
     getUser: function() {
+        var user = new Ext.ModelManager.getModel({
+            loggedIn : false
+        }, 'User');
+
+        user.loggedIn = Ext.util.Cookies.get('loggedIn');
+
         return user;
     }
 

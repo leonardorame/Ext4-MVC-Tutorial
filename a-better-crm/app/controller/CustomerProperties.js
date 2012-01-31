@@ -8,12 +8,14 @@
  * License of Sencha Designer does not include license for Ext JS 4.0.x. For more
  * details see http://www.sencha.com/license or contact license@sencha.com.
  *
- * You should implement event handling and custom methods in this
- * class.
+ * This file will be auto-generated each and everytime you save your project.
+ *
+ * Do NOT hand edit this file.
  */
 
 Ext.define('MyApp.controller.CustomerProperties', {
     extend: 'Ext.app.Controller',
+    alias: 'controller.customerproperties',
 
     stores: [
         'Customers'
@@ -92,6 +94,10 @@ Ext.define('MyApp.controller.CustomerProperties', {
 
         // Show the form
         cp.show();
+    },
+
+    onControllerClickStub: function() {
+
     }
 
 });

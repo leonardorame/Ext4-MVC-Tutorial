@@ -8,16 +8,51 @@
  * License of Sencha Designer does not include license for Ext JS 4.0.x. For more
  * details see http://www.sencha.com/license or contact license@sencha.com.
  *
- * You should implement event handling and custom methods in this
- * class.
+ * This file will be auto-generated each and everytime you save your project.
+ *
+ * Do NOT hand edit this file.
  */
 
 Ext.define('MyApp.view.MyViewport', {
-    extend: 'MyApp.view.ui.MyViewport',
+    extend: 'Ext.container.Viewport',
     alias: 'widget.viewportmain',
+
+    layout: {
+        type: 'border'
+    },
+    xtype: 'viewportmain',
 
     initComponent: function() {
         var me = this;
+
+        Ext.applyIf(me, {
+            items: [
+                {
+                    xtype: 'container',
+                    layout: {
+                        align: 'stretch',
+                        type: 'vbox'
+                    },
+                    floatable: false,
+                    region: 'center'
+                },
+                {
+                    xtype: 'container',
+                    height: 100,
+                    html: '<h1 class="x-panel-header">Page Title</h1>',
+                    floatable: false,
+                    region: 'north'
+                },
+                {
+                    xtype: 'container',
+                    height: 50,
+                    html: '<h1 class="x-panel-header">Page Footer</h1>',
+                    floatable: false,
+                    region: 'south'
+                }
+            ]
+        });
+
         me.callParent(arguments);
     }
 

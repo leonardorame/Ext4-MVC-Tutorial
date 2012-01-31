@@ -8,15 +8,16 @@
  * License of Sencha Designer does not include license for Ext JS 4.0.x. For more
  * details see http://www.sencha.com/license or contact license@sencha.com.
  *
- * You should implement event handling and custom methods in this
- * class.
+ * This file will be auto-generated each and everytime you save your project.
+ *
+ * Do NOT hand edit this file.
  */
 
 Ext.define('MyApp.controller.Login', {
     extend: 'Ext.app.Controller',
 
     stores: [
-        'User'
+        
     ],
     views: [
         'LoginForm',
@@ -38,6 +39,7 @@ Ext.define('MyApp.controller.Login', {
         var frm = win.getForm();
         frm.submit({
             success: function(form, action){
+                console.log('success');
                 var UserController = this.getController('MyApp.controller.User');
                 this.getController('MyApp.controller.Main').showMainView();
                 UserController.saveSession(); 
@@ -65,6 +67,10 @@ Ext.define('MyApp.controller.Login', {
         this.getController('MyApp.controller.User').deleteSession(); 
 
         Ext.create('MyApp.view.LoginForm', {}).show();
+    },
+
+    onControllerClickStub: function() {
+
     }
 
 });

@@ -18,96 +18,110 @@
         "cssPath": ""
     },
     "xdsVersion": "2.0.0",
+    "xdsBuild": "309",
     "framework": "ext40",
     "topInstanceFileMap": {
         "228c5040-742b-4412-a518-8b5bfd5863fd": {
             "paths": [
+                "metadata/view/MyViewport",
+                "app/view/override/MyViewport.js",
                 "app/view/MyViewport.js",
-                "app/view/ui/MyViewport.js",
                 "app/view/Viewport.js"
             ],
             "className": "MyViewport"
         },
         "3437cbb8-7aa3-4252-be5e-33ce4fe24bc7": {
             "paths": [
-                "app/view/LoginForm.js",
-                "app/view/ui/LoginForm.js"
+                "metadata/view/LoginForm",
+                "app/view/override/LoginForm.js",
+                "app/view/LoginForm.js"
             ],
             "className": "LoginForm"
         },
         "8df014aa-16bf-4024-979e-9ff932b66245": {
             "paths": [
-                "app/view/CustomerGrid.js",
-                "app/view/ui/CustomerGrid.js"
+                "metadata/view/CustomerGrid",
+                "app/view/override/CustomerGrid.js",
+                "app/view/CustomerGrid.js"
             ],
             "className": "CustomerGrid"
         },
         "6056efa4-0ff1-48d8-b35d-955d5655ba29": {
             "paths": [
-                "app/view/MainToolbar.js",
-                "app/view/ui/MainToolbar.js"
+                "metadata/view/MainToolbar",
+                "app/view/override/MainToolbar.js",
+                "app/view/MainToolbar.js"
             ],
             "className": "MainToolbar"
         },
         "e99c015f-9e3d-46b4-bda5-dc890186d3fe": {
             "paths": [
-                "app/store/Customers.js",
-                "app/store/base/Customers.js"
+                "metadata/store/Customers",
+                "app/store/override/Customers.js",
+                "app/store/Customers.js"
             ],
             "className": "Customers"
         },
-        "08738095-15ea-4744-a99b-0317f62e45f4": {
-            "paths": [
-                "app/store/User.js",
-                "app/store/base/User.js"
-            ],
-            "className": "User"
-        },
         "911f1650-5f0a-40e5-85ba-0e0276fce942": {
             "paths": [
+                "metadata/controller/User",
+                "app/controller/override/User.js",
                 "app/controller/User.js"
             ],
             "className": "User"
         },
         "7051e9b8-90f2-4246-b6c1-deb8e94fc3f8": {
             "paths": [
+                "metadata/controller/Login",
+                "app/controller/override/Login.js",
                 "app/controller/Login.js"
             ],
             "className": "Login"
         },
         "71b302e4-f5f1-4d85-80fd-769279213c74": {
             "paths": [
+                "metadata/controller/Main",
+                "app/controller/override/Main.js",
                 "app/controller/Main.js"
             ],
             "className": "Main"
         },
         "7d2b1f36-2fff-42b8-bf43-e69b2b859ec6": {
             "paths": [
+                "metadata/controller/CustomerGrid",
+                "app/controller/override/CustomerGrid.js",
                 "app/controller/CustomerGrid.js"
             ],
             "className": "CustomerGrid"
         },
         "aeefff17-9d80-451e-b68c-305bd9b373bb": {
             "paths": [
-                "app/view/CustomerProperties.js",
-                "app/view/ui/CustomerProperties.js"
+                "metadata/view/CustomerProperties",
+                "app/view/override/CustomerProperties.js",
+                "app/view/CustomerProperties.js"
             ],
             "className": "CustomerProperties"
         },
         "442b148a-aee3-4f50-9ad9-05cd46e80fb7": {
             "paths": [
+                "metadata/controller/CustomerProperties",
+                "app/controller/override/CustomerProperties.js",
                 "app/controller/CustomerProperties.js"
             ],
             "className": "CustomerProperties"
         },
         "39ba7ffa-4502-4273-8b1d-c3e506bfd5b1": {
             "paths": [
+                "metadata/model/Customer",
+                "app/model/override/Customer.js",
                 "app/model/Customer.js"
             ],
             "className": "Customer"
         },
         "7f08a0eb-e92c-4564-91da-8cef179a05a3": {
             "paths": [
+                "metadata/model/User",
+                "app/model/override/User.js",
                 "app/model/User.js"
             ],
             "className": "User"
@@ -116,7 +130,7 @@
     "expandedState": {
         "data": true,
         "model": true,
-        "component": true,
+        "component": false,
         "controller": true
     }
 }
