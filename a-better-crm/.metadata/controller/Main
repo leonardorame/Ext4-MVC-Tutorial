@@ -35,7 +35,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "showMainView",
-                "implHandler": "mainToolBar = Ext.create('MyApp.view.MainToolbar', {});\nmainView = Ext.create('MyApp.view.CustomerGrid', {flex: 1});\n// to be able to use \"this.getViewport()\" the a ref has to be added\n// please take a look at the refs section of this file.\nitem = this.getViewportmain().down('container[region=center]'); \nitem.add(mainToolBar);\nitem.add(mainView);\n// load the store\nthis.getCustomersStore().load();",
+                "implHandler": "mainToolBar = Ext.create('MyApp.view.MainToolbar', {});\nmainView = Ext.create('MyApp.view.CustomerGrid', {flex: 1});\n// to be able to use \"this.getViewport()\" the a ref has to be added\n// please take a look at the refs section of this file.\nvar center_container = this.getViewportmain().down('container[region=center]'); \ncenter_container.add(mainToolBar);\ncenter_container.add(mainView);\n// load the store\nthis.getCustomersStore().load();",
                 "designer|userClassName": "showMainView"
             },
             "customConfigs": [],

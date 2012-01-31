@@ -41,7 +41,6 @@ Ext.define('MyApp.controller.Login', {
     },
 
     onLogoutClick: function(button, e, options) {
-        console.log('logout');
         this.getController('MyApp.controller.Main').destroyAll();
         this.getController('MyApp.controller.User').deleteSession(); 
 
