@@ -31,17 +31,17 @@ Ext.application({
     name: 'MyApp',
 
     controllers: [
-        'User',
-        'Login',
-        'Main',
-        'CustomerGrid',
-        'CustomerProperties'
+        'MyApp.controller.User',
+        'MyApp.controller.Login',
+        'MyApp.controller.Main',
+        'MyApp.controller.CustomerGrid',
+        'MyApp.controller.CustomerProperties'
     ],
 
     launch: function() {
         var user = this.getController('MyApp.controller.User').getUser();
 
-        if(user.loggedIn == "false") {
+        if(user.loggedIn != "true") {
             Ext.create('MyApp.view.LoginForm', {}).show();
         }
         else
