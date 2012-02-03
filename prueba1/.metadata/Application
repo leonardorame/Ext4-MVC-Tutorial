@@ -1,0 +1,30 @@
+{
+    "id": "ExtBox1-ext-gen2356",
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Customer"
+        ],
+        "stores": [
+            "MyJsonStore"
+        ],
+        "views": [
+            "MyViewport",
+            "MyForm",
+            "MyGridPanel",
+            "CustomerDataForm"
+        ],
+        "autoCreateViewport": true,
+        "name": "MyApp",
+        "designer|launch": "Ext.define('Globals',{\n    singleton: true,\n    loggedIn: false  \n});\n"
+    },
+    "customConfigs": [],
+    "designerId": "application",
+    "$viewOrder": 0,
+    "expanded": true
+}

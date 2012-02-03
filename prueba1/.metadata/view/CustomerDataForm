@@ -1,0 +1,80 @@
+{
+    "id": "ExtBox1-ext-gen15846",
+    "type": "form",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoRender": true,
+        "autoShow": true,
+        "draggable": true,
+        "floating": true,
+        "height": 250,
+        "id": "frmCustomer",
+        "width": 400,
+        "bodyPadding": 10,
+        "closable": true,
+        "title": "Customer Data",
+        "designer|userClassName": "CustomerDataForm",
+        "designer|userAlias": "frmCustomer"
+    },
+    "customConfigs": [],
+    "designerId": "134fbc43-4979-402b-a554-6391a4933733",
+    "$viewOrder": 3,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen16390",
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Id",
+                "fieldLabel": "Id",
+                "designer|userClassName": "MyTextField2",
+                "layout|anchor": "100%"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen16869",
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Name",
+                "fieldLabel": "Name",
+                "designer|userClassName": "MyTextField2",
+                "layout|anchor": "100%"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen17002",
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Sales",
+                "fieldLabel": "Sales",
+                "designer|userClassName": "MyTextField2",
+                "layout|anchor": "100%"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

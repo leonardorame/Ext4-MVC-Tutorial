@@ -1,0 +1,65 @@
+{
+    "name": "project",
+    "settings": {
+        "urlPrefix": "http://localhost/",
+        "directAPI": "",
+        "spacesToIndent": 4,
+        "codeGenFormat": "Class",
+        "exportPath": "",
+        "extPath": "./",
+        "senchaIoPath": "/",
+        "lineEnding": "LF",
+        "instantiateStore": true,
+        "genTimestamps": false,
+        "saveOnDeploy": false,
+        "appName": "MyApp",
+        "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true",
+        "senchaIoKey": ""
+    },
+    "xdsVersion": "2.0.0",
+    "framework": "ext40",
+    "topInstanceFileMap": {
+        "889f9e95-627d-4244-ba5d-dd8dec393700": {
+            "paths": [
+                "app/view/MyViewport.js",
+                "app/view/ui/MyViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyViewport"
+        },
+        "d5f47435-a641-4226-a257-7020e5b29e2e": {
+            "paths": [
+                "app/view/MyForm.js",
+                "app/view/ui/MyForm.js"
+            ],
+            "className": "MyForm"
+        },
+        "1fd0dab3-63e5-48a2-9283-a05116407ba6": {
+            "paths": [
+                "app/store/MyJsonStore.js",
+                "app/store/base/MyJsonStore.js"
+            ],
+            "className": "MyJsonStore"
+        },
+        "4c8b248a-b3e3-477e-93ab-e51290008080": {
+            "paths": [
+                "app/view/MyGridPanel.js",
+                "app/view/ui/MyGridPanel.js"
+            ],
+            "className": "MyGridPanel"
+        },
+        "134fbc43-4979-402b-a554-6391a4933733": {
+            "paths": [
+                "app/view/CustomerDataForm.js",
+                "app/view/ui/CustomerDataForm.js"
+            ],
+            "className": "CustomerDataForm"
+        }
+    },
+    "expandedState": {
+        "data": true,
+        "model": true,
+        "component": true,
+        "controller": true
+    }
+}
