@@ -15,54 +15,71 @@
 Ext.define('MyApp.controller.ViewportController', {
     extend: 'Ext.app.Controller',
 
-    // This controller uses a store and a view.
-    stores: ['MyJsonStore'],
-    views: ['MyViewport'],
-
-    getLoginForm: function(){
-      // Get or Create loginform instance
-      lfrm = Ext.getCmp('loginform');
-      if(!lfrm){
-         lfrm = Ext.widget('loginform')
-      };
-      return lfrm;
-    },
+    models: [
+        'Customer',
+        'User'
+    ],
+    stores: [
+        'MyJsonStore'
+    ],
+    views: [
+        'CustomerDataForm',
+        'MyViewport'
+    ],
     init: function() {
+        this.control({
+            "button[id=btnLogout]": {
+                click: this.onLogout
+            },
+            "dataview": {
+                render: this.onViewportRender
+            }
+        });
+
         // create a variable accessible from any part of this controller
         // from now on, instead of using "this", use "me".
-        me = this; 
-        me.control({
-          'viewport': {
-            render: me.onViewportRender
-          },
-          'button[id=btnLogout]': {
-            click: me.onLogout
-          }
-        });
+        me = this;
+        MyApp.userInstance = Ext.create('MyApp.model.User', {loggedIn: false});
+
+
     },
-    onLogout: function(){
-      Globals.loggedIn = false;
-      me.checkLogin();
+
+    getLoginForm: function() {
+        // Get or Create loginform instance
+        lfrm = Ext.getCmp('loginform');
+        if(!lfrm){
+            lfrm = Ext.widget('loginform');
+        };
+        return lfrm;
     },
-    onAfterLogin: function(form){
+
+    onAfterLogin: function(form) {
         // this event is executed after successfull login.
         form.destroy();
-        Globals.loggedIn = true;
+        MyApp.userInstance.set('loggedIn',  true);
         me.getMyJsonStoreStore().load();
     },
-    checkLogin: function(){
-      // user is not logged-in then show loginForm.
-      if(!Globals.loggedIn) {
-        // assign MyForm.onSuccess event to me.onAfterLogin
-        // then show the loginForm.
-        me.getLoginForm().onSuccess = me.onAfterLogin;
-        me.getLoginForm().show();
-      }
+
+    checkLogin: function() {
+        // user is not logged-in then show loginForm.
+        if(!MyApp.userInstance.get('loggedIn')) {
+            // assign MyForm.onSuccess event to me.onAfterLogin
+            // then show the loginForm.
+            me.getLoginForm().onSuccess = me.onAfterLogin;
+            me.getLoginForm().show();
+        }
     },
-    onViewportRender: function(p){
-      // after rendering the viewport show the login form if not logged in.
-      if(me.checkLogin()){
-        console.log("Logged in.");
-      };
+
+    onLogout: function(button, e, options) {
+        MyApp.userInstance.set('loggedIn', false);
+        me.checkLogin();
+    },
+
+    onViewportRender: function(abstractcomponent, options) {
+        // after rendering the viewport show the login form if not logged in.
+        if(me.checkLogin()){
+            console.log("Logged in.");
+        }
     }
+
 });

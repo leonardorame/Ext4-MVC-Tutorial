@@ -7,21 +7,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "models": [
-            "Customer"
-        ],
-        "stores": [
-            "MyJsonStore"
-        ],
+        "models": null,
+        "stores": [],
         "views": [
-            "MyViewport",
-            "MyForm",
-            "MyGridPanel",
-            "CustomerDataForm"
+            "MyGridPanel"
         ],
         "autoCreateViewport": true,
         "name": "MyApp",
-        "designer|launch": "Ext.define('Globals',{\n    singleton: true,\n    loggedIn: false  \n});\n"
+        "designer|launch": "var userInstance = Ext.create('MyApp.model.User', {loggedIn: false});"
     },
     "customConfigs": [],
     "designerId": "application",

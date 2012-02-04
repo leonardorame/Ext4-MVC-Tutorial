@@ -54,6 +54,24 @@
                 "app/view/ui/CustomerDataForm.js"
             ],
             "className": "CustomerDataForm"
+        },
+        "8def15fd-d39c-4d2f-a326-8dfd3243e6f0": {
+            "paths": [
+                "app/controller/MyForm.js"
+            ],
+            "className": "MyForm"
+        },
+        "13cad139-9060-459b-846d-0f933092f34a": {
+            "paths": [
+                "app/controller/MyGridPanel.js"
+            ],
+            "className": "MyGridPanel"
+        },
+        "6274b64c-32d3-44df-8ba7-817eb2184594": {
+            "paths": [
+                "app/controller/ViewportController.js"
+            ],
+            "className": "ViewportController"
         }
     },
     "expandedState": {

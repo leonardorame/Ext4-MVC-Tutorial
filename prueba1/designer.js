@@ -17,29 +17,26 @@ Ext.Loader.setConfig({
     enabled: true
 });
 
-Ext.define('Globals',{
-  singleton: true,
-  loggedIn: false  
-});
-
 Ext.application({
+    stores: [
+        
+    ],
 
-    // all controllers of the app must be 
-    // defined here.
-    //
-    // Views, Stores and Models can be defined by each Controller.
-    
-    controllers: [
-      'ViewportController',
-      'MyForm',
-      'MyGridPanel'
+    views: [
+        'MyGridPanel'
     ],
 
     autoCreateViewport: true,
 
     name: 'MyApp',
 
-    launch: function() {
+    controllers: [
+        'MyForm',
+        'MyGridPanel',
+        'ViewportController'
+    ],
 
+    launch: function() {
+        var userInstance = Ext.create('MyApp.model.User', {loggedIn: false});
     }
 });

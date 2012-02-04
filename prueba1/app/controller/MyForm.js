@@ -15,37 +15,40 @@
 Ext.define('MyApp.controller.MyForm', {
     extend: 'Ext.app.Controller',
 
-    // As this controller's name is equal to MyForm view,
-    // the view is instantiated automatically.
-
-     init: function() {
+    views: [
+        'MyForm'
+    ],
+    init: function() {
         this.control({
-          'button[id=btnSubmit]': {
-            click: this.onButtonClick
-          }
+            "button[id=btnSubmit]": {
+                click: this.onButtonClick1
+            }
         });
     },
-    onButtonClick: function(button){
-        Globals.loggedIn = false;
+
+    onButtonClick1: function(button, e, options) {
+        //MyApp.userInstance.set('loggeIn', false) ;
         var frm = button.up('loginform');
         frm.getForm().submit({
-        success: function(form, action){
-          Ext.Msg.alert('Failure', action.result.msg);
-          frm.onSuccess(frm);
-        },
-        failure: function(form, action){
-          switch(action.failureType){
-            case Ext.form.action.CLIENT_INVALID:
-              Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
-              break;
-            case Ext.form.action.Action.CONNECT_FAILURE:
-               Ext.Msg.alert('Failure', 'Ajax communication failed');
-               break;
-            case Ext.form.action.Action.SERVER_INVALID:
-               Ext.Msg.alert('Failure', action.result.msg);
-               break;
-          }
+            success: function(form, action){
+                Ext.Msg.alert('Sucess', action.result.msg);
+                frm.onSuccess(frm);
+            },
+            failure: function(form, action){
+                switch(action.failureType){
+                    case Ext.form.action.CLIENT_INVALID:
+                    Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
+                    break;
+                    case Ext.form.action.Action.CONNECT_FAILURE:
+                    Ext.Msg.alert('Failure', 'Ajax communication failed');
+                    break;
+                    case Ext.form.action.Action.SERVER_INVALID:
+                    Ext.Msg.alert('Failure', action.result.msg);
+                    break;
+                }
+            }
         }
-      });
+        );
     }
+
 });

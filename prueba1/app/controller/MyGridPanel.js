@@ -15,54 +15,60 @@
 Ext.define('MyApp.controller.MyGridPanel', {
     extend: 'Ext.app.Controller',
 
-    // As this controller's name is equal to MyGridPanel view,
-    // the view is instantiated automatically.
-
-     models: ['Customer'],
-     views: ['CustomerDataForm'],
-
-     init: function() {
-        bview = Ext.widget('mygridpanel');
-        console.log(bview);
-        console.log('aasad');
-
+    models: [
+        'Customer'
+    ],
+    stores: [
+        'MyJsonStore'
+    ],
+    views: [
+        'MyGridPanel'
+    ],
+    init: function() {
         this.control({
-          'button[id=btnDelete]': {
-            click: this.onDeleteClick
-          },
-          'button[id=btnEdit]': {
-            click: this.onEditClick
-          },
-          'mygridpanel': {  
-            itemclick: this.onItemClick,
-            selectionchange: this.onSelectionChange
-          }
+            "button[id=btnDelete]": {
+                click: this.onDeleteClick
+            },
+            "button[id=btnEdit]": {
+                click: this.onButtonClick
+            },
+            "gridview": {
+                itemclick: this.onGridviewItemClick
+            },
+            "mygridpanel": {
+                selectionchange: this.onGridviewSelectionChange
+            }
         });
     },
-    onEditClick: function(button){
-      // get selected record
-      record =  button.up('mygridpanel').getSelectionModel().getSelection()[0];
-      view = Ext.widget('frmCustomer');
-      view.getForm().loadRecord(record);
+
+    onDeleteClick: function(button, e, options) {
+        console.log('Delete click');
     },
-    onDeleteClick: function(button){
-      console.log('Delete click!');
+
+    onButtonClick: function(button, e, options) {
+        // get selected record
+        record =  button.up('gridpanel').getSelectionModel().getSelection()[0];
+        view = Ext.widget('frmCustomer');
+        view.getForm().loadRecord(record);
     },
-    onItemClick: function(view,record, item,index,e,eOpts ){
-      console.log(record.data.Name);
+
+    onGridviewItemClick: function(dataview, record, item, index, e, options) {
+        console.log(record.data.Name);
     },
-    onSelectionChange: function(sm) {
-      console.log('Selection change');
-      if(!sm.hasSelection()){
-        Ext.getCmp('btnDelete').disable();
-        Ext.getCmp('btnEdit').disable();
-        console.Log('disabled');
-      }
-      else
-      {
-        Ext.getCmp('btnDelete').enable();
-        Ext.getCmp('btnEdit').enable();
-        console.log('enabled');
-      };
+
+    onGridviewSelectionChange: function(model, selected, eOpts) {
+        console.log('Selection change');
+        if(!model.hasSelection()){
+            Ext.getCmp('btnDelete').disable();
+            Ext.getCmp('btnEdit').disable();
+            console.Log('disabled');
+        }
+        else
+        {
+            Ext.getCmp('btnDelete').enable();
+            Ext.getCmp('btnEdit').enable();
+            console.log('enabled');
+        };
     }
+
 });

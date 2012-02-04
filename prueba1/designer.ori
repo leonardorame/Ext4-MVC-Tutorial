@@ -31,7 +31,8 @@ Ext.application({
     
     controllers: [
       'ViewportController',
-      'MyForm'
+      'MyForm',
+      'MyGridPanel'
     ],
 
     autoCreateViewport: true,
