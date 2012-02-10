@@ -70,8 +70,8 @@ Ext.define('DEMO.controller.MyGridPanel', {
         // get selected record
         record =  button.up('gridpanel').getSelectionModel().getSelection()[0];
         view = Ext.widget('frmCustomer');
-        console.log(view);
         view.getForm().loadRecord(record);
+        view.show();
     },
 
     onGridviewItemClick: function(dataview, record, item, index, e, options) {

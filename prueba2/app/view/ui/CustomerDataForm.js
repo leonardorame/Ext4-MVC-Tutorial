@@ -16,8 +16,8 @@
 Ext.define('DEMO.view.ui.CustomerDataForm', {
     extend: 'Ext.form.Panel',
 
-    autoRender: true,
-    autoShow: true,
+    autoShow: false,
+    autoRender: false,
     draggable: true,
     floating: true,
     height: 250,
