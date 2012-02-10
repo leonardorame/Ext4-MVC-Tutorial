@@ -7,6 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|initialView": true,
         "autoRender": true,
         "autoShow": true,
         "draggable": true,
@@ -24,7 +25,7 @@
     "customConfigs": [],
     "designerId": "d5f47435-a641-4226-a257-7020e5b29e2e",
     "$viewOrder": 0,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen2908",

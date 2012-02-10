@@ -27,37 +27,43 @@ Ext.define('MyApp.controller.ViewportController', {
         'MyViewport'
     ],
     init: function() {
-        this.control({
-            "button[id=btnLogout]": {
-                click: this.onLogout
-            },
-            "dataview": {
-                render: this.onViewportRender
-            }
-        });
-
         // create a variable accessible from any part of this controller
         // from now on, instead of using "this", use "me".
         me = this;
         MyApp.userInstance = Ext.create('MyApp.model.User', {loggedIn: false});
+        me.onViewportRender(this, this);
 
+        this.control({
+            "loginform button[id=btnSubmit]":{
+                
+            },
+            "button[id=btnLogout]": {
+                click: this.onLogout
+            },
+            "viewport": {
+                render: this.onViewportRender
+            }
+        });
 
     },
 
     getLoginForm: function() {
         // Get or Create loginform instance
-        lfrm = Ext.getCmp('loginform');
+        /*lfrm = Ext.getCmp('loginform');
         if(!lfrm){
             lfrm = Ext.widget('loginform');
-        };
+        };*/
+        lfrm = Ext.ComponentQuery.query('#loginform');
         return lfrm;
     },
 
     onAfterLogin: function(form) {
-        // this event is executed after successfull login.
-        form.destroy();
+        
+// this event is executed after successfull login.
         MyApp.userInstance.set('loggedIn',  true);
+        Ext.widget('viewport');
         me.getMyJsonStoreStore().load();
+        form.destroy();
     },
 
     checkLogin: function() {
@@ -65,7 +71,7 @@ Ext.define('MyApp.controller.ViewportController', {
         if(!MyApp.userInstance.get('loggedIn')) {
             // assign MyForm.onSuccess event to me.onAfterLogin
             // then show the loginForm.
-            me.getLoginForm().onSuccess = me.onAfterLogin;
+            //me.getLoginForm().onSuccess = me.onAfterLogin;
             me.getLoginForm().show();
         }
     },
@@ -77,9 +83,9 @@ Ext.define('MyApp.controller.ViewportController', {
 
     onViewportRender: function(abstractcomponent, options) {
         // after rendering the viewport show the login form if not logged in.
-        if(me.checkLogin()){
-            console.log("Logged in.");
-        }
+       // if(me.checkLogin()){
+       //     console.log("already Logged in.");
+       // }
     }
 
 });

@@ -13,19 +13,16 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.ui.MyForm', {
+Ext.define('DEMO.view.ui.LoginWindow', {
     extend: 'Ext.form.Panel',
 
-    //autoRender: true,
-    //autoShow: true,
     draggable: true,
     floating: true,
     frame: true,
-    height: 196,
     id: 'loginform',
-    width: 399,
     bodyPadding: 10,
     title: 'Login form',
+    modal: true,
     url: '/cgi-bin/extdesigner/extjshandler.cgi/LoginHandler/login',
 
     initComponent: function() {
@@ -40,27 +37,37 @@ Ext.define('MyApp.view.ui.MyForm', {
                 {
                     xtype: 'textfield',
                     name: 'user',
+                    allowBlank: false,
+                    anchor: '100%',
+                    selectOnFocus: true,
                     fieldLabel: 'User'
                 },
                 {
                     xtype: 'textfield',
                     name: 'password',
+                    allowBlank: false,
+                    anchor: '100%',
+                    selectOnFocus: true,
                     fieldLabel: 'Password'
-                },
-                {
-                    xtype: 'button',
-                    id: 'btnSubmit',
-                    text: 'Submit',
-                    type: 'submit'
-                },
-                {
-                    xtype: 'button',
-                    text: 'Cancel'
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+  buttons: [
+    {
+      text: "Submit",
+      type: "submit",
+      action: "login",
+      formBind: true
+    },
+    {
+      text: "Cancel",
+      type: "button",
+      action: "cancel",
+      formBind: true
     }
-
+  ]
 });
+

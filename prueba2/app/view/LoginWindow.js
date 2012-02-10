@@ -12,8 +12,8 @@
  * class.
  */
 
-Ext.define('MyApp.view.MyForm', {
-    extend: 'MyApp.view.ui.MyForm',
+Ext.define('DEMO.view.LoginWindow', {
+    extend: 'DEMO.view.ui.LoginWindow',
     alias: 'widget.loginform',
 
     initComponent: function() {
@@ -22,3 +22,5 @@ Ext.define('MyApp.view.MyForm', {
     }
 
 });
+
+

@@ -12,51 +12,74 @@
  * class.
  */
 
-Ext.define('MyApp.controller.MyGridPanel', {
+Ext.define('DEMO.controller.MyGridPanel', {
     extend: 'Ext.app.Controller',
+    refs: [
+      {
+        ref: 'background',
+        selector: 'background'
+      },
+      {
+        ref: 'mygridpanel',
+        selector: 'mygridpanel'
+      },
+      {
+        ref: 'mainview',
+        selector: 'mainview'
+      }
+    ],
 
-    models: [
-        'Customer'
-    ],
-    stores: [
-        'MyJsonStore'
-    ],
-    views: [
-        'MyGridPanel'
-    ],
+    views: ['CustomerDataForm'],
+    models: ['Customer'],
+    stores: ['MyJsonStore'],
+
     init: function() {
         this.control({
             "button[id=btnDelete]": {
                 click: this.onDeleteClick
             },
             "button[id=btnEdit]": {
-                click: this.onButtonClick
+                click: this.onEditClick
             },
-            "gridview": {
-                itemclick: this.onGridviewItemClick
+
+            "mainview": {
+                render: this.onMainViewRender
             },
-            "gridpanel": {
+
+            "mygridpanel": {
+                itemclick: this.onGridviewItemClick,
                 selectionchange: this.onGridviewSelectionChange
             }
         });
+
+    },
+
+    onMainViewRender: function(){
+        this.getMygridpanel().store.load();
+   },
+
+    onGridpanelRender: function(g, eopts){
+        g.store.load();
     },
 
     onDeleteClick: function(button, e, options) {
         console.log('Delete click');
     },
 
-    onButtonClick: function(button, e, options) {
+    onEditClick: function(button, e, options) {
         // get selected record
         record =  button.up('gridpanel').getSelectionModel().getSelection()[0];
         view = Ext.widget('frmCustomer');
+        console.log(view);
         view.getForm().loadRecord(record);
     },
 
     onGridviewItemClick: function(dataview, record, item, index, e, options) {
+        console.log('GridViewClick');
         console.log(record.data.Name);
     },
 
-    onGridviewSelectionChange: function(tablepanel, selections, options) {
+    onGridviewSelectionChange: function(model, selections, options) {
         console.log('Selection change');
         if(!model.hasSelection()){
             Ext.getCmp('btnDelete').disable();
@@ -70,5 +93,6 @@ Ext.define('MyApp.controller.MyGridPanel', {
             console.log('enabled');
         };
     }
+
 
 });

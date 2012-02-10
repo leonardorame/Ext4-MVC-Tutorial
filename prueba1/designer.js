@@ -31,7 +31,6 @@ Ext.application({
     name: 'MyApp',
 
     controllers: [
-        'MyForm',
         'MyGridPanel',
         'ViewportController'
     ],

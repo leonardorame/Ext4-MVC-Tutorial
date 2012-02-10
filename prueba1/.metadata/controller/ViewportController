@@ -1,0 +1,124 @@
+{
+    "id": "ExtBox1-ext-gen6633",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Customer",
+            "User"
+        ],
+        "stores": [
+            "MyJsonStore"
+        ],
+        "views": [
+            "CustomerDataForm",
+            "MyViewport"
+        ],
+        "designer|init": "// create a variable accessible from any part of this controller\n// from now on, instead of using \"this\", use \"me\".\nme = this;\nMyApp.userInstance = Ext.create('MyApp.model.User', {loggedIn: false});\n\n",
+        "designer|userClassName": "ViewportController"
+    },
+    "customConfigs": [],
+    "designerId": "6274b64c-32d3-44df-8ba7-817eb2184594",
+    "$viewOrder": 2,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen7199",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getLoginForm",
+                "designer|params": [
+                    ""
+                ],
+                "implHandler": "        // Get or Create loginform instance\n        lfrm = Ext.getCmp('loginform');\n        if(!lfrm){\n            lfrm = Ext.widget('loginform');\n        };\n        return lfrm;",
+                "designer|userClassName": "getLoginForm"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8028",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAfterLogin",
+                "designer|params": [
+                    "form"
+                ],
+                "implHandler": "        // this event is executed after successfull login.\n        form.destroy();\n        MyApp.userInstance.set('loggedIn',  true);\n        me.getMyJsonStoreStore().load();",
+                "designer|userClassName": "onAfterLogin"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8320",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "checkLogin",
+                "implHandler": "        // user is not logged-in then show loginForm.\n        if(!MyApp.userInstance.get('loggedIn')) {\n            // assign MyForm.onSuccess event to me.onAfterLogin\n            // then show the loginForm.\n            me.getLoginForm().onSuccess = me.onAfterLogin;\n            me.getLoginForm().show();\n        }",
+                "designer|userClassName": "checkLogin"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen12671",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLogout",
+                "implHandler": "        MyApp.userInstance.set('loggedIn', false);\n        me.checkLogin();",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "button[id=btnLogout]",
+                "designer|userClassName": "onLogout"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen14013",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onViewportRender",
+                "implHandler": "        // after rendering the viewport show the login form if not logged in.\n        if(me.checkLogin()){\n            console.log(\"already Logged in.\");\n        }",
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.view.View",
+                "designer|controlQuery": "dataview",
+                "designer|userClassName": "onViewportRender"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

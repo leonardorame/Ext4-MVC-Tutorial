@@ -22,15 +22,15 @@
         "889f9e95-627d-4244-ba5d-dd8dec393700": {
             "paths": [
                 "app/view/MyViewport.js",
-                "app/view/ui/MyViewport.js",
-                "app/view/Viewport.js"
+                "app/view/ui/MyViewport.js"
             ],
             "className": "MyViewport"
         },
         "d5f47435-a641-4226-a257-7020e5b29e2e": {
             "paths": [
                 "app/view/MyForm.js",
-                "app/view/ui/MyForm.js"
+                "app/view/ui/MyForm.js",
+                "app/view/Viewport.js"
             ],
             "className": "MyForm"
         },
@@ -78,6 +78,6 @@
         "data": true,
         "model": true,
         "component": true,
-        "controller": true
+        "controller": false
     }
 }
