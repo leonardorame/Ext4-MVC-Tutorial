@@ -40,7 +40,7 @@
         <PackageName Value="WebLaz"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="3">
+    <Units Count="4">
       <Unit0>
         <Filename Value="extjshandler.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -60,6 +60,13 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="providermodule"/>
       </Unit2>
+      <Unit3>
+        <Filename Value="customerdatamodule.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CustomerData"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="customerdatamodule"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

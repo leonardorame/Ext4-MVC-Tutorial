@@ -34,6 +34,7 @@ Ext.define('DEMO.controller.MyGridPanel', {
     stores: ['MyJsonStore'],
 
     init: function() {
+        me = this;
         this.control({
             "button[id=btnDelete]": {
                 click: this.onDeleteClick
@@ -41,7 +42,9 @@ Ext.define('DEMO.controller.MyGridPanel', {
             "button[id=btnEdit]": {
                 click: this.onEditClick
             },
-
+            "button[id=btnInsert]": {
+                click: this.onInsertClick
+            },
             "mainview": {
                 render: this.onMainViewRender
             },
@@ -69,9 +72,24 @@ Ext.define('DEMO.controller.MyGridPanel', {
     onEditClick: function(button, e, options) {
         // get selected record
         record =  button.up('gridpanel').getSelectionModel().getSelection()[0];
-        view = Ext.widget('frmCustomer');
-        view.getForm().loadRecord(record);
-        view.show();
+        // create controller passing record as parameter
+        controller = this.getController('DEMO.controller.CustomerDataForm');
+        controller.init(record);
+        controller.onAfterSave = this.onAfterSave;
+    },
+
+    onInsertClick: function(button, e, options) {
+        // create a new record
+        record = Ext.create('DEMO.model.Customer', {});
+        record.data.Id = -1;
+        // create controller passing record as parameter
+        controller = this.getController('DEMO.controller.CustomerDataForm');
+        controller.init(record);
+        controller.onAfterSave = this.onAfterSave;
+    },
+
+    onAfterSave: function(){
+      this.getMyJsonStoreStore().load();
     },
 
     onGridviewItemClick: function(dataview, record, item, index, e, options) {
@@ -84,7 +102,7 @@ Ext.define('DEMO.controller.MyGridPanel', {
         if(!model.hasSelection()){
             Ext.getCmp('btnDelete').disable();
             Ext.getCmp('btnEdit').disable();
-            console.Log('disabled');
+            console.log('disabled');
         }
         else
         {

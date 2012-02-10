@@ -17,7 +17,6 @@ Ext.define('DEMO.view.ui.MyGridPanel', {
     extend: 'Ext.grid.Panel',
 
     border: '',
-    height: 106,
     title: 'My Grid Panel',
     store: 'MyJsonStore',
 
@@ -51,10 +50,10 @@ Ext.define('DEMO.view.ui.MyGridPanel', {
                     items: [
                         {
                             xtype: 'button',
-                            disabled: true,
-                            id: 'btnDelete',
+                            disabled: false, // insert is allways enabled
+                            id: 'btnInsert',
                             allowDepress: false,
-                            text: 'Delete'
+                            text: 'Insert'
                         },
                         {
                             xtype: 'button',
@@ -62,6 +61,13 @@ Ext.define('DEMO.view.ui.MyGridPanel', {
                             id: 'btnEdit',
                             allowDepress: false,
                             text: 'Edit'
+                        },
+                        {
+                            xtype: 'button',
+                            disabled: true,
+                            id: 'btnDelete',
+                            allowDepress: false,
+                            text: 'Delete'
                         }
                     ]
                 }

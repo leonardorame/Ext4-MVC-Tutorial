@@ -20,16 +20,21 @@ Ext.define('DEMO.view.ui.CustomerDataForm', {
     autoRender: false,
     draggable: true,
     floating: true,
-    height: 250,
     id: 'frmCustomer',
-    width: 400,
     bodyPadding: 10,
     closable: true,
     title: 'Customer Data',
     modal: true, 
+    frame: true,
     closeAction: 'destroy',
+    url: '/cgi-bin/extdesigner/extjshandler.cgi/CustomerData/update',
     initComponent: function() {
         var me = this;
+
+        me.initialConfig = Ext.apply({
+            url: '/cgi-bin/extdesigner/extjshandler.cgi/CustomerData/update'
+        }, me.initialConfig);
+
 
         Ext.applyIf(me, {
             items: [
@@ -55,6 +60,20 @@ Ext.define('DEMO.view.ui.CustomerDataForm', {
         });
 
         me.callParent(arguments);
+    },
+  buttons: [
+    {
+      text: "Submit",
+      type: "submit",
+      action: "submit",
+      formBind: true
+    },
+    {
+      text: "Cancel",
+      type: "button",
+      action: "cancel",
+      formBind: true
     }
+  ]
 
 });

@@ -5,7 +5,7 @@ unit main;
 interface
 
 uses
-  SysUtils, Classes, httpdefs, fpHTTP, fpWeb, fpjson;
+  SysUtils, Classes, httpdefs, fpHTTP, fpWeb, fpjson, jsonparser;
 
 type
 
@@ -34,30 +34,21 @@ implementation
 procedure TFPWebModule1.getCustomerListRequest(Sender: TObject;
   ARequest: TRequest; AResponse: TResponse; var Handled: Boolean);
 var
+  lJSonParser: TJSONParser;
+  lStr: TFileStream;
+  lFile: string;
   lJSON: TJSONObject;
-  lJSONArray: TJSONArray;
-  lJSONItem: TJSONObject;
+
 begin
-  lJSON := TJSONObject.Create;
-  lJSONArray := TJSONArray.Create;
+  lFile := ExtractFilePath(ParamStr(0)) + 'users.json';
+  lStr := TFileStream.Create(lFile, fmOpenRead);
+  lJSonParser := TJSONParser.Create(lStr);
   try
-    lJSONItem := TJSONObject.Create;
-    lJSONItem.Add('Id', 1);
-    lJSONItem.Add('Name', 'Perez, Juan');
-    lJSONItem.Add('Sales', 123.4);
-    lJSONArray.Add(lJSONItem);
-
-    lJSONItem := TJSONObject.Create;
-    lJSONItem.Add('Id', 2);
-    lJSONItem.Add('Name', 'Gomez, Elisa');
-    lJSONItem.Add('Sales', 43.2);
-    lJSONArray.Add(lJSONItem);
-
-    lJSON.Arrays['root'] := lJSONArray;
-
+    lJSON := lJSonParser.Parse as TJSonObject;
     AResponse.Content := lJSON.AsJSON;
   finally
-    lJSON.Free;
+    lJSonParser.Free;
+    lStr.Free;
   end;
   Handled := True;
 end;

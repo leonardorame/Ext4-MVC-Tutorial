@@ -3,7 +3,7 @@ program extjshandler;
 {$mode objfpc}{$H+}
 
 uses
-  fpCGI, main, providermodule;
+  fpCGI, main, providermodule, customerdatamodule;
 
 begin
   Application.Initialize;

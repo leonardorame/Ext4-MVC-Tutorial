@@ -5,14 +5,7 @@ Ext.application({
 
     appFolder: 'app',
 
-    models: [
-        'Customer'
-    ],
-  
-    stores: [
-        'MyJsonStore'
-    ],
-
+ 
     controllers: [
         'LoginController'
     ],

@@ -3,7 +3,7 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="3">
+    <Units Count="5">
       <Unit0>
         <Filename Value="extjshandler.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -12,7 +12,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="16" Y="6"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -21,12 +21,11 @@
         <ComponentName Value="FPWebModule1"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="main"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="35" Y="26"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="34"/>
+        <CursorPos X="1" Y="66"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -40,15 +39,40 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="37" Y="5"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
+      <Unit3>
+        <Filename Value="customerdatamodule.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CustomerData"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="customerdatamodule"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="48"/>
+        <CursorPos X="45" Y="61"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="../../fpc/packages/fcl-json/src/fpjson.pp"/>
+        <UnitName Value="fpjson"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="306"/>
+        <CursorPos X="19" Y="329"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit4>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="3" HistoryIndex="2">
+    <JumpHistory Count="14" HistoryIndex="13">
       <Position1>
         <Filename Value="providermodule.pas"/>
         <Caret Line="10" Column="37" TopLine="1"/>
@@ -61,6 +85,50 @@
         <Filename Value="providermodule.pas"/>
         <Caret Line="25" Column="28" TopLine="1"/>
       </Position3>
+      <Position4>
+        <Filename Value="main.pas"/>
+        <Caret Line="24" Column="9" TopLine="24"/>
+      </Position4>
+      <Position5>
+        <Filename Value="main.pas"/>
+        <Caret Line="51" Column="31" TopLine="24"/>
+      </Position5>
+      <Position6>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="23" Column="26" TopLine="1"/>
+      </Position6>
+      <Position7>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="38" Column="1" TopLine="7"/>
+      </Position7>
+      <Position8>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="35" Column="21" TopLine="7"/>
+      </Position8>
+      <Position9>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="56" Column="20" TopLine="22"/>
+      </Position9>
+      <Position10>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="43" Column="27" TopLine="19"/>
+      </Position10>
+      <Position11>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="8" Column="65" TopLine="1"/>
+      </Position11>
+      <Position12>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="56" Column="28" TopLine="34"/>
+      </Position12>
+      <Position13>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="92" Column="27" TopLine="71"/>
+      </Position13>
+      <Position14>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="63" Column="35" TopLine="44"/>
+      </Position14>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
