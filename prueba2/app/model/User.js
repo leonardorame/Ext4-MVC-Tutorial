@@ -18,9 +18,17 @@ Ext.define('DEMO.model.User', {
 
     fields: [
         {
-            defaultValue: false,
+            name: 'id',
+            type: 'int'
+        },
+        {
             name: 'loggedIn',
             type: 'boolean'
         }
-    ]
+    ],
+    proxy: {
+        type: 'localstorage',
+        id: 'userpreference'
+    }
+
 });

@@ -45,6 +45,9 @@ Ext.define('DEMO.controller.MyGridPanel', {
             "button[id=btnInsert]": {
                 click: this.onInsertClick
             },
+            "button[id=btnRefresh]": {
+                click: this.onRefreshClick
+            },
             "mainview": {
                 render: this.onMainViewRender
             },
@@ -64,6 +67,10 @@ Ext.define('DEMO.controller.MyGridPanel', {
     onGridpanelRender: function(g, eopts){
         console.log('Panel Render');
         g.store.load();
+    },
+
+    onRefreshClick: function(button, e, options) {
+        this.getMyJsonStoreStore().load();
     },
 
     onDeleteClick: function(button, e, options) {

@@ -1,4 +1,3 @@
-// test
 Ext.Loader.setConfig({enabled:true});
 
 Ext.application({
@@ -7,16 +6,25 @@ Ext.application({
     appFolder: 'app',
 
     controllers: [
+        'User',
         'Main',
         'MyGridPanel',
         'LoginController',
         'CustomerDataForm'
     ],
-  
+
     autoCreateViewport: true,
     
     launch: function() {
-      Ext.create('DEMO.view.LoginWindow', {}).show();
-    },
+      var user = this.getController('DEMO.controller.User').getUser();
+      
+      if(!user.data.loggedIn) {
+          Ext.create('DEMO.view.LoginWindow', {}).show();
+      }
+      else
+      {
+          this.getController('DEMO.controller.Main').showMainView();
+      }
+    }
 });
 

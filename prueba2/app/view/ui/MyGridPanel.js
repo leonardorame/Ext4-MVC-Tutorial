@@ -68,6 +68,12 @@ Ext.define('DEMO.view.ui.MyGridPanel', {
                             id: 'btnDelete',
                             allowDepress: false,
                             text: 'Delete'
+                        },
+                        {
+                            xtype: 'button',
+                            id: 'btnRefresh',
+                            allowDepress: false,
+                            text: 'Refresh'
                         }
                     ]
                 }

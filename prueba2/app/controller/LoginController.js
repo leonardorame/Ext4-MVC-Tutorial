@@ -27,13 +27,14 @@ Ext.define('DEMO.controller.LoginController', {
             }
         });
     },
-
+    
     login: function(button) {
       var win = button.up('loginform');
           frm = win.getForm();
           frm.submit({
             success: function(form, action){
                 this.getController('DEMO.controller.Main').showMainView();
+                this.getController('DEMO.controller.User').saveSession(); 
                 win.destroy();  
             },
             failure: function(form, action){
@@ -54,7 +55,10 @@ Ext.define('DEMO.controller.LoginController', {
     },
     logout: function(button) {
         console.log('logout');
+
         this.getController('DEMO.controller.Main').destroyAll();
+        this.getController('DEMO.controller.User').deleteSession(); 
+
         Ext.create('DEMO.view.LoginWindow', {}).show();
     }
 });
