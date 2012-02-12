@@ -1,9 +1,6 @@
 Ext.define('DEMO.view.Viewport', {
     extend: 'Ext.container.Viewport',
     alias: 'widget.background',
-    //requires: [
-    //    'DEMO.view.Main'
-    //],
     layout: 'border',
     initComponent: function() {
         Ext.apply(this, {

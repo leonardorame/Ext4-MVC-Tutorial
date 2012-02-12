@@ -15,10 +15,15 @@
 Ext.define('DEMO.view.CustomerDataForm', {
     extend: 'DEMO.view.ui.CustomerDataForm',
     alias: 'widget.frmCustomer',
-
+    insertMode: false,
     initComponent: function() {
         var me = this;
         me.callParent(arguments);
+    },
+    setInsertMode: function(mode) {
+      insertMode = mode;
+    },
+    getInsertMode: function(){
+      return insertMode;
     }
-
 });

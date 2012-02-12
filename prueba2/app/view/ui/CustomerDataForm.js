@@ -27,20 +27,14 @@ Ext.define('DEMO.view.ui.CustomerDataForm', {
     modal: true, 
     frame: true,
     closeAction: 'destroy',
-    url: '/cgi-bin/extdesigner/extjshandler.cgi/CustomerData/update',
     initComponent: function() {
         var me = this;
-
-        me.initialConfig = Ext.apply({
-            url: '/cgi-bin/extdesigner/extjshandler.cgi/CustomerData/update'
-        }, me.initialConfig);
-
 
         Ext.applyIf(me, {
             items: [
                 {
                     xtype: 'textfield',
-                    name: 'Id',
+                    name: 'id',
                     fieldLabel: 'Id',
                     anchor: '100%'
                 },

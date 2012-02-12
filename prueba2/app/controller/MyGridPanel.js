@@ -62,39 +62,48 @@ Ext.define('DEMO.controller.MyGridPanel', {
    },
 
     onGridpanelRender: function(g, eopts){
+        console.log('Panel Render');
         g.store.load();
     },
 
     onDeleteClick: function(button, e, options) {
-        console.log('Delete click');
+        Ext.Msg.show({
+             title:'Delete record?',
+             msg: 'Please configrm',
+             buttons: Ext.Msg.YESNO,
+             icon: Ext.Msg.QUESTION,
+             fn: function(btn, text) {
+               if(btn == 'yes') {
+                  record =  button.up('gridpanel').getSelectionModel().getSelection()[0];
+                  var store = this.getMyJsonStoreStore();
+                  console.log('aa');
+                  store.remove(record);
+                  console.log('bb');
+                  store.sync();
+                }
+             },
+             scope: this
+        });
     },
 
     onEditClick: function(button, e, options) {
         // get selected record
         record =  button.up('gridpanel').getSelectionModel().getSelection()[0];
-        // create controller passing record as parameter
-        controller = this.getController('DEMO.controller.CustomerDataForm');
-        controller.init(record);
-        controller.onAfterSave = this.onAfterSave;
+        var view = Ext.widget('frmCustomer');
+        view.getForm().loadRecord(record);
+        view.setInsertMode(false);
+        view.show();
     },
 
     onInsertClick: function(button, e, options) {
         // create a new record
-        record = Ext.create('DEMO.model.Customer', {});
-        record.data.Id = -1;
-        // create controller passing record as parameter
-        controller = this.getController('DEMO.controller.CustomerDataForm');
-        controller.init(record);
-        controller.onAfterSave = this.onAfterSave;
-    },
-
-    onAfterSave: function(){
-      this.getMyJsonStoreStore().load();
+        var view = Ext.widget('frmCustomer');
+        view.setInsertMode(true);
+        view.show();
     },
 
     onGridviewItemClick: function(dataview, record, item, index, e, options) {
         console.log('GridViewClick');
-        console.log(record.data.Name);
     },
 
     onGridviewSelectionChange: function(model, selections, options) {
@@ -102,15 +111,11 @@ Ext.define('DEMO.controller.MyGridPanel', {
         if(!model.hasSelection()){
             Ext.getCmp('btnDelete').disable();
             Ext.getCmp('btnEdit').disable();
-            console.log('disabled');
         }
         else
         {
             Ext.getCmp('btnDelete').enable();
             Ext.getCmp('btnEdit').enable();
-            console.log('enabled');
         };
     }
-
-
 });

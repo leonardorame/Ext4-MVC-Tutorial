@@ -27,10 +27,20 @@ Ext.define('DEMO.store.base.MyJsonStore', {
             model: 'DEMO.model.Customer',
             proxy: {
                 type: 'ajax',
-                url: '/cgi-bin/extdesigner/extjshandler.cgi/LoginHandler/getCustomerList',
+                api: {  
+                    read: '/cgi-bin/extdesigner/extjshandler.cgi/CustomerData/read',
+                    create: '/cgi-bin/extdesigner/extjshandler.cgi/CustomerData/insert',
+                    update: '/cgi-bin/extdesigner/extjshandler.cgi/CustomerData/update',
+                    destroy: '/cgi-bin/extdesigner/extjshandler.cgi/CustomerData/delete'
+                },
                 reader: {
                     type: 'json',
-                    root: 'root'
+                    root: 'items'
+                },
+                writer: {
+                    type: 'json',
+                    writeAllFields: true,
+                    root: 'items'
                 }
             }
         }, cfg)]);

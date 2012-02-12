@@ -29,7 +29,7 @@ Ext.define('DEMO.view.ui.MyGridPanel', {
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'Id',
+                    dataIndex: 'id',
                     text: 'Id'
                 },
                 {

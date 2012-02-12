@@ -19,14 +19,8 @@ Ext.define('DEMO.controller.LoginController', {
         mainController = null;
 
         this.control({
-            'loginform': {
-                render: this.onPanelRendered
-            },
             'loginform button[action=login]': {
                 click: this.login
-            },
-            'loginform textfield': {
-              specialkey: this.keyenter
             },
             'mainview button[action=logout]': {
               click: this.logout
@@ -34,16 +28,12 @@ Ext.define('DEMO.controller.LoginController', {
         });
     },
 
-    onPanelRendered: function(panel) {
-      console.log('The panel was rendered');
-    },
-    
     login: function(button) {
       var win = button.up('loginform');
           frm = win.getForm();
           frm.submit({
             success: function(form, action){
-                this.getController('DEMO.controller.Main').init();
+                this.getController('DEMO.controller.Main').showMainView();
                 win.destroy();  
             },
             failure: function(form, action){
@@ -61,9 +51,6 @@ Ext.define('DEMO.controller.LoginController', {
             },
             scope: this
           });
-    },
-    keyenter: function() {
-        console.log('keyenter');
     },
     logout: function(button) {
         console.log('logout');

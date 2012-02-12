@@ -12,7 +12,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="16" Y="6"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -23,9 +23,9 @@
         <UnitName Value="main"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="34"/>
-        <CursorPos X="1" Y="66"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="32"/>
+        <CursorPos X="35" Y="41"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -39,7 +39,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="37" Y="5"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -52,9 +52,9 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="48"/>
-        <CursorPos X="45" Y="61"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="125"/>
+        <CursorPos X="1" Y="143"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit3>
@@ -65,14 +65,14 @@
         <WindowIndex Value="0"/>
         <TopLine Value="306"/>
         <CursorPos X="19" Y="329"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
       </Unit4>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="14" HistoryIndex="13">
+    <JumpHistory Count="22" HistoryIndex="21">
       <Position1>
         <Filename Value="providermodule.pas"/>
         <Caret Line="10" Column="37" TopLine="1"/>
@@ -129,6 +129,38 @@
         <Filename Value="customerdatamodule.pas"/>
         <Caret Line="63" Column="35" TopLine="44"/>
       </Position14>
+      <Position15>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="70" Column="62" TopLine="52"/>
+      </Position15>
+      <Position16>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="104" Column="37" TopLine="104"/>
+      </Position16>
+      <Position17>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="134" Column="38" TopLine="111"/>
+      </Position17>
+      <Position18>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="122" Column="67" TopLine="103"/>
+      </Position18>
+      <Position19>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="135" Column="39" TopLine="119"/>
+      </Position19>
+      <Position20>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="134" Column="37" TopLine="112"/>
+      </Position20>
+      <Position21>
+        <Filename Value="main.pas"/>
+        <Caret Line="34" Column="1" TopLine="27"/>
+      </Position21>
+      <Position22>
+        <Filename Value="customerdatamodule.pas"/>
+        <Caret Line="137" Column="36" TopLine="111"/>
+      </Position22>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

@@ -18,9 +18,8 @@ Ext.define('DEMO.model.Customer', {
 
     fields: [
         {
-            mapping: 'Id',
-            name: 'Id',
-            type: 'auto'
+            name: 'id',
+            type: 'int'
         },
         {
             name: 'Name',
@@ -28,7 +27,8 @@ Ext.define('DEMO.model.Customer', {
         },
         {
             name: 'Sales',
-            type: 'auto'
+            type: 'float'
         }
     ]
+
 });

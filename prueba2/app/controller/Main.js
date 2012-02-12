@@ -19,8 +19,9 @@ Ext.define('DEMO.controller.Main', {
     stores: ['MyJsonStore'],
 
     init: function() {
-        this.getController('DEMO.controller.MyGridPanel').init();
+    },
 
+    showMainView: function(){
         mainView = Ext.create('DEMO.view.Main', {});
         item = this.getBackground().down('container[region=center]'); 
         item.add(mainView);
