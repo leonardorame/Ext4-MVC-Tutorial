@@ -1,0 +1,48 @@
+<mockup version="1.0" skin="sketch" measuredW="472" measuredH="425" mockupW="450" mockupH="400">
+  <controls>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="22" y="25" w="-1" h="-1" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Better%20CRM%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="__group__" x="109" y="156" w="259" h="175" measuredW="259" measuredH="175" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="259" h="175" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="44">
+          <controlProperties>
+            <text>Login</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="118" y="42" w="112" h="-1" measuredW="79" measuredH="27" zOrder="1" locked="false" isInGroup="44">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="118" y="75" w="112" h="-1" measuredW="79" measuredH="27" zOrder="2" locked="false" isInGroup="44">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="118" y="115" w="-1" h="-1" measuredW="40" measuredH="27" zOrder="3" locked="false" isInGroup="44">
+          <controlProperties>
+            <text>Ok</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="166" y="116" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="4" locked="false" isInGroup="44">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="28" y="44" w="-1" h="-1" measuredW="69" measuredH="21" zOrder="5" locked="false" isInGroup="44">
+          <controlProperties>
+            <text>Username%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="33" y="78" w="-1" h="-1" measuredW="64" measuredH="21" zOrder="6" locked="false" isInGroup="44">
+          <controlProperties>
+            <text>Password%3A</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
