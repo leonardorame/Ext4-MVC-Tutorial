@@ -6,12 +6,6 @@ object FPWebModule1: TFPWebModule1
       Default = False
       OnRequest = loginRequest
       Template.AllowTagParams = False
-    end  
-    item
-      Name = 'getCustomerList'
-      Default = False
-      OnRequest = getCustomerListRequest
-      Template.AllowTagParams = False
     end>
   CreateSession = False
   Height = 277
