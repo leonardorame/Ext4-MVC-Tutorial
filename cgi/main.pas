@@ -1,3 +1,5 @@
+// sample program
+
 unit main; 
 
 {$mode objfpc}{$H+}
@@ -12,8 +14,6 @@ type
   { TFPWebModule1 }
 
   TFPWebModule1 = class(TFPWebModule)
-    procedure getCustomerListRequest(Sender: TObject; ARequest: TRequest;
-      AResponse: TResponse; var Handled: Boolean);
     procedure loginRequest(Sender: TObject; ARequest: TRequest;
       AResponse: TResponse; var Handled: Boolean);
   private
@@ -31,27 +31,6 @@ implementation
 
 { TFPWebModule1 }
 
-procedure TFPWebModule1.getCustomerListRequest(Sender: TObject;
-  ARequest: TRequest; AResponse: TResponse; var Handled: Boolean);
-var
-  lJSonParser: TJSONParser;
-  lStr: TFileStream;
-  lFile: string;
-  lJSON: TJSONObject;
-
-begin
-  lFile := ExtractFilePath(ParamStr(0)) + 'users.json';
-  lStr := TFileStream.Create(lFile, fmOpenRead);
-  lJSonParser := TJSONParser.Create(lStr);
-  try
-    lJSON := lJSonParser.Parse as TJSonObject;
-    AResponse.Content := lJSON.AsJSON;
-  finally
-    lJSonParser.Free;
-    lStr.Free;
-  end;
-  Handled := True;
-end;
 
 procedure TFPWebModule1.loginRequest(Sender: TObject; ARequest: TRequest;
   AResponse: TResponse; var Handled: Boolean);
