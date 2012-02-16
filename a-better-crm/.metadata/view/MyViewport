@@ -1,0 +1,71 @@
+{
+    "id": "ExtBox1-ext-gen4693",
+    "type": "viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "layout": "border",
+        "designer|userClassName": "MyViewport"
+    },
+    "customConfigs": [],
+    "designerId": "228c5040-742b-4412-a518-8b5bfd5863fd",
+    "$viewOrder": 0,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen5006",
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "fit",
+                "designer|userClassName": "MyContainer",
+                "layout|region": "center"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen5235",
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 150,
+                "html": "<h1 class=\"x-panel-header\">Page Title</h1>",
+                "tpl": null,
+                "designer|userClassName": "MyContainer1",
+                "layout|region": "north"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen5498",
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 150,
+                "html": "<h1 class=\"x-panel-header\">Page Footer</h1>",
+                "designer|userClassName": "MyContainer2",
+                "layout|region": "south"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

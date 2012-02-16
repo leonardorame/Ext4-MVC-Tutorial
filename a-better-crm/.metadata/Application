@@ -1,0 +1,25 @@
+{
+    "id": "ExtBox1-ext-gen6902",
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "stores": [],
+        "views": [
+            "MyViewport",
+            "LoginForm",
+            "CustomerGrid",
+            "MainToolbar"
+        ],
+        "autoCreateViewport": true,
+        "name": "MyApp",
+        "designer|launch": ""
+    },
+    "customConfigs": [],
+    "designerId": "application",
+    "$viewOrder": 0,
+    "expanded": true
+}

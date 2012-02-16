@@ -1,0 +1,59 @@
+{
+    "name": "a-better-crm",
+    "settings": {
+        "urlPrefix": "http://localhost/",
+        "directAPI": "",
+        "spacesToIndent": 4,
+        "codeGenFormat": "Class",
+        "exportPath": "",
+        "extPath": "http://extjs.cachefly.net/ext-4.0.2a/",
+        "senchaIoKey": "",
+        "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
+        "lineEnding": "LF",
+        "instantiateStore": true,
+        "genTimestamps": false,
+        "saveOnDeploy": false,
+        "appName": "MyApp",
+        "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true",
+        "cssPath": ""
+    },
+    "xdsVersion": "2.0.0",
+    "framework": "ext40",
+    "topInstanceFileMap": {
+        "228c5040-742b-4412-a518-8b5bfd5863fd": {
+            "paths": [
+                "app/view/MyViewport.js",
+                "app/view/ui/MyViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyViewport"
+        },
+        "3437cbb8-7aa3-4252-be5e-33ce4fe24bc7": {
+            "paths": [
+                "app/view/LoginForm.js",
+                "app/view/ui/LoginForm.js"
+            ],
+            "className": "LoginForm"
+        },
+        "8df014aa-16bf-4024-979e-9ff932b66245": {
+            "paths": [
+                "app/view/CustomerGrid.js",
+                "app/view/ui/CustomerGrid.js"
+            ],
+            "className": "CustomerGrid"
+        },
+        "6056efa4-0ff1-48d8-b35d-955d5655ba29": {
+            "paths": [
+                "app/view/MainToolbar.js",
+                "app/view/ui/MainToolbar.js"
+            ],
+            "className": "MainToolbar"
+        }
+    },
+    "expandedState": {
+        "data": true,
+        "model": true,
+        "component": true,
+        "controller": true
+    }
+}
