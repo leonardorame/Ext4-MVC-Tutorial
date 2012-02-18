@@ -7,12 +7,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "stores": [],
+        "models": null,
+        "stores": [
+            "UsersStore"
+        ],
         "views": [
-            "MyViewport",
-            "LoginForm",
-            "CustomerGrid",
-            "MainToolbar"
+            "CustomerGrid"
         ],
         "autoCreateViewport": true,
         "name": "MyApp",

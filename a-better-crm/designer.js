@@ -19,14 +19,11 @@ Ext.Loader.setConfig({
 
 Ext.application({
     stores: [
-        
+        'UsersStore'
     ],
 
     views: [
-        'MyViewport',
-        'LoginForm',
-        'CustomerGrid',
-        'MainToolbar'
+        'CustomerGrid'
     ],
 
     autoCreateViewport: true,

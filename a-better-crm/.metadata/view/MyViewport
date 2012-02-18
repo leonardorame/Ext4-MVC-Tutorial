@@ -7,7 +7,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|initialView": true,
         "layout": "border",
         "designer|userClassName": "MyViewport"
     },

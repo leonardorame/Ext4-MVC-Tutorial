@@ -23,8 +23,7 @@
         "228c5040-742b-4412-a518-8b5bfd5863fd": {
             "paths": [
                 "app/view/MyViewport.js",
-                "app/view/ui/MyViewport.js",
-                "app/view/Viewport.js"
+                "app/view/ui/MyViewport.js"
             ],
             "className": "MyViewport"
         },
@@ -38,7 +37,8 @@
         "8df014aa-16bf-4024-979e-9ff932b66245": {
             "paths": [
                 "app/view/CustomerGrid.js",
-                "app/view/ui/CustomerGrid.js"
+                "app/view/ui/CustomerGrid.js",
+                "app/view/Viewport.js"
             ],
             "className": "CustomerGrid"
         },
@@ -48,6 +48,13 @@
                 "app/view/ui/MainToolbar.js"
             ],
             "className": "MainToolbar"
+        },
+        "e99c015f-9e3d-46b4-bda5-dc890186d3fe": {
+            "paths": [
+                "app/store/UsersStore.js",
+                "app/store/base/UsersStore.js"
+            ],
+            "className": "UsersStore"
         }
     },
     "expandedState": {

@@ -16,36 +16,19 @@
 Ext.define('MyApp.view.ui.CustomerGrid', {
     extend: 'Ext.grid.Panel',
 
+    autoShow: true,
     height: 250,
+    id: 'customergrid',
     width: 400,
+    closable: true,
     title: 'Customer\'s listing',
+    forceFit: true,
+    store: 'UsersStore',
 
     initComponent: function() {
         var me = this;
 
         Ext.applyIf(me, {
-            columns: [
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'string',
-                    text: 'String'
-                },
-                {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'number',
-                    text: 'Number'
-                },
-                {
-                    xtype: 'datecolumn',
-                    dataIndex: 'date',
-                    text: 'Date'
-                },
-                {
-                    xtype: 'booleancolumn',
-                    dataIndex: 'bool',
-                    text: 'Boolean'
-                }
-            ],
             viewConfig: {
 
             },
@@ -57,15 +40,15 @@ Ext.define('MyApp.view.ui.CustomerGrid', {
                     items: [
                         {
                             xtype: 'button',
-                            id: 'btnInsert',
-                            icon: 'icons/insert.png',
-                            text: 'Insert'
-                        },
-                        {
-                            xtype: 'button',
                             id: 'btnEdit',
                             icon: 'icons/edit.png',
                             text: 'Edit'
+                        },
+                        {
+                            xtype: 'button',
+                            id: 'btnInsert',
+                            icon: 'icons/insert.png',
+                            text: 'Insert'
                         },
                         {
                             xtype: 'button',
@@ -80,6 +63,28 @@ Ext.define('MyApp.view.ui.CustomerGrid', {
                             text: 'Refresh'
                         }
                     ]
+                }
+            ],
+            columns: [
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'id',
+                    text: 'Id'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'name',
+                    text: 'Name'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'email',
+                    text: 'Email'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'age',
+                    text: 'Age'
                 }
             ]
         });

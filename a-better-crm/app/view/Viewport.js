@@ -14,7 +14,7 @@
  */
 
 Ext.define('MyApp.view.Viewport', {
-    extend: 'MyApp.view.MyViewport',
+    extend: 'MyApp.view.CustomerGrid',
     renderTo: Ext.getBody(),
     requires: [
         'MyApp.view.MyViewport',
