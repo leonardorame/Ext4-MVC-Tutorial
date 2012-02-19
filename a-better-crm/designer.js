@@ -19,18 +19,35 @@ Ext.Loader.setConfig({
 
 Ext.application({
     stores: [
-        'UsersStore'
+        
     ],
 
     views: [
-        'CustomerGrid'
+        'MyViewport'
     ],
 
     autoCreateViewport: true,
 
     name: 'MyApp',
 
+    controllers: [
+        'User',
+        'Login',
+        'Main',
+        'CustomerGrid',
+        'CustomerProperties'
+    ],
+
     launch: function() {
+        var user = this.getController('MyApp.controller.User').getUser();
+
+        if(!user.data.loggedIn) {
+            Ext.create('MyApp.view.LoginForm', {}).show();
+        }
+        else
+        {
+            this.getController('MyApp.controller.Main').showMainView();
+        }
 
     }
 });

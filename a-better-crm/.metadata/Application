@@ -8,15 +8,13 @@
     "codeClass": null,
     "userConfig": {
         "models": null,
-        "stores": [
-            "UsersStore"
-        ],
+        "stores": [],
         "views": [
-            "CustomerGrid"
+            "MyViewport"
         ],
         "autoCreateViewport": true,
         "name": "MyApp",
-        "designer|launch": ""
+        "designer|launch": "var user = this.getController('MyApp.controller.User').getUser();\n\nif(!user.data.loggedIn) {\n    Ext.create('MyApp.view.LoginForm', {}).show();\n}\nelse\n{\n    this.getController('MyApp.controller.Main').showMainView();\n}\n"
     },
     "customConfigs": [],
     "designerId": "application",

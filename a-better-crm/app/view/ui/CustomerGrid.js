@@ -17,13 +17,10 @@ Ext.define('MyApp.view.ui.CustomerGrid', {
     extend: 'Ext.grid.Panel',
 
     autoShow: true,
-    height: 250,
     id: 'customergrid',
-    width: 400,
-    closable: true,
     title: 'Customer\'s listing',
     forceFit: true,
-    store: 'UsersStore',
+    store: 'Customers',
 
     initComponent: function() {
         var me = this;

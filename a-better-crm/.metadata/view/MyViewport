@@ -7,8 +7,10 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|initialView": true,
         "layout": "border",
-        "designer|userClassName": "MyViewport"
+        "designer|userClassName": "MyViewport",
+        "designer|userAlias": "viewport"
     },
     "customConfigs": [],
     "designerId": "228c5040-742b-4412-a518-8b5bfd5863fd",
@@ -24,8 +26,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout": "fit",
+                "html": null,
+                "layout": "vbox",
                 "designer|userClassName": "MyContainer",
+                "container|align": "stretch",
+                "layout|floatable": false,
                 "layout|region": "center"
             },
             "customConfigs": [],
@@ -40,10 +45,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "height": 150,
+                "height": 100,
                 "html": "<h1 class=\"x-panel-header\">Page Title</h1>",
                 "tpl": null,
                 "designer|userClassName": "MyContainer1",
+                "layout|floatable": false,
                 "layout|region": "north"
             },
             "customConfigs": [],
@@ -58,9 +64,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "height": 150,
+                "height": 50,
                 "html": "<h1 class=\"x-panel-header\">Page Footer</h1>",
                 "designer|userClassName": "MyContainer2",
+                "layout|floatable": false,
                 "layout|region": "south"
             },
             "customConfigs": [],

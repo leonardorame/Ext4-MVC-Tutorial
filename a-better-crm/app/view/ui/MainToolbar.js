@@ -28,7 +28,8 @@ Ext.define('MyApp.view.ui.MainToolbar', {
                 },
                 {
                     xtype: 'button',
-                    icon: 'icon/logout.png',
+                    id: 'btnLogout',
+                    icon: 'icons/logout.png',
                     text: 'Logout'
                 }
             ]

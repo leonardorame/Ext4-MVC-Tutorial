@@ -7,15 +7,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|initialView": true,
         "autoShow": true,
-        "height": 250,
+        "height": null,
         "id": "customergrid",
-        "width": 400,
-        "closable": true,
+        "width": null,
         "title": "Customer's listing",
         "forceFit": true,
-        "store": "UsersStore",
+        "store": "Customers",
         "designer|userClassName": "CustomerGrid",
         "designer|userAlias": "customergrid"
     },
@@ -52,7 +50,7 @@
                 "dock": "top"
             },
             "customConfigs": [],
-            "expanded": false,
+            "expanded": true,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen6114",

@@ -14,12 +14,13 @@
  */
 
 Ext.define('MyApp.view.Viewport', {
-    extend: 'MyApp.view.CustomerGrid',
+    extend: 'MyApp.view.MyViewport',
     renderTo: Ext.getBody(),
     requires: [
         'MyApp.view.MyViewport',
         'MyApp.view.LoginForm',
         'MyApp.view.CustomerGrid',
-        'MyApp.view.MainToolbar'
+        'MyApp.view.MainToolbar',
+        'MyApp.view.CustomerProperties'
     ]
 });

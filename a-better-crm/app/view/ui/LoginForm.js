@@ -16,6 +16,8 @@
 Ext.define('MyApp.view.ui.LoginForm', {
     extend: 'Ext.form.Panel',
 
+    draggable: true,
+    floating: true,
     frame: true,
     height: 155,
     width: 302,

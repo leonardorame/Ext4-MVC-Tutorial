@@ -40,7 +40,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "icon": "icon/logout.png",
+                "id": "btnLogout",
+                "icon": "icons/logout.png",
                 "text": "Logout",
                 "designer|userClassName": "MyButton1",
                 "layout|flex": null

@@ -7,6 +7,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "draggable": true,
+        "floating": true,
         "frame": true,
         "height": 155,
         "width": 302,
@@ -34,7 +36,7 @@
                 "dock": "bottom"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen6465",

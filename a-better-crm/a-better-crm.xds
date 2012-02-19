@@ -5,7 +5,7 @@
         "directAPI": "",
         "spacesToIndent": 4,
         "codeGenFormat": "Class",
-        "exportPath": "",
+        "exportPath": "/var/www/a-better-crm",
         "extPath": "http://extjs.cachefly.net/ext-4.0.2a/",
         "senchaIoKey": "",
         "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
@@ -23,7 +23,8 @@
         "228c5040-742b-4412-a518-8b5bfd5863fd": {
             "paths": [
                 "app/view/MyViewport.js",
-                "app/view/ui/MyViewport.js"
+                "app/view/ui/MyViewport.js",
+                "app/view/Viewport.js"
             ],
             "className": "MyViewport"
         },
@@ -37,8 +38,7 @@
         "8df014aa-16bf-4024-979e-9ff932b66245": {
             "paths": [
                 "app/view/CustomerGrid.js",
-                "app/view/ui/CustomerGrid.js",
-                "app/view/Viewport.js"
+                "app/view/ui/CustomerGrid.js"
             ],
             "className": "CustomerGrid"
         },
@@ -51,10 +51,54 @@
         },
         "e99c015f-9e3d-46b4-bda5-dc890186d3fe": {
             "paths": [
-                "app/store/UsersStore.js",
-                "app/store/base/UsersStore.js"
+                "app/store/Customers.js",
+                "app/store/base/Customers.js"
             ],
-            "className": "UsersStore"
+            "className": "Customers"
+        },
+        "08738095-15ea-4744-a99b-0317f62e45f4": {
+            "paths": [
+                "app/store/User.js",
+                "app/store/base/User.js"
+            ],
+            "className": "User"
+        },
+        "911f1650-5f0a-40e5-85ba-0e0276fce942": {
+            "paths": [
+                "app/controller/User.js"
+            ],
+            "className": "User"
+        },
+        "7051e9b8-90f2-4246-b6c1-deb8e94fc3f8": {
+            "paths": [
+                "app/controller/Login.js"
+            ],
+            "className": "Login"
+        },
+        "71b302e4-f5f1-4d85-80fd-769279213c74": {
+            "paths": [
+                "app/controller/Main.js"
+            ],
+            "className": "Main"
+        },
+        "7d2b1f36-2fff-42b8-bf43-e69b2b859ec6": {
+            "paths": [
+                "app/controller/CustomerGrid.js"
+            ],
+            "className": "CustomerGrid"
+        },
+        "aeefff17-9d80-451e-b68c-305bd9b373bb": {
+            "paths": [
+                "app/view/CustomerProperties.js",
+                "app/view/ui/CustomerProperties.js"
+            ],
+            "className": "CustomerProperties"
+        },
+        "442b148a-aee3-4f50-9ad9-05cd46e80fb7": {
+            "paths": [
+                "app/controller/CustomerProperties.js"
+            ],
+            "className": "CustomerProperties"
         }
     },
     "expandedState": {

@@ -14,6 +14,7 @@
 
 Ext.define('MyApp.view.MyViewport', {
     extend: 'MyApp.view.ui.MyViewport',
+    alias: 'widget.viewport',
 
     initComponent: function() {
         var me = this;

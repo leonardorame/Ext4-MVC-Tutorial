@@ -28,20 +28,24 @@ Ext.define('MyApp.view.ui.MyViewport', {
                 {
                     xtype: 'container',
                     layout: {
-                        type: 'fit'
+                        align: 'stretch',
+                        type: 'vbox'
                     },
+                    floatable: false,
                     region: 'center'
                 },
                 {
                     xtype: 'container',
-                    height: 150,
+                    height: 100,
                     html: '<h1 class="x-panel-header">Page Title</h1>',
+                    floatable: false,
                     region: 'north'
                 },
                 {
                     xtype: 'container',
-                    height: 150,
+                    height: 50,
                     html: '<h1 class="x-panel-header">Page Footer</h1>',
+                    floatable: false,
                     region: 'south'
                 }
             ]
