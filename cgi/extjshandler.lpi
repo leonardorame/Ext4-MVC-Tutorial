@@ -32,13 +32,10 @@
         <LaunchingApplication PathPlusParams="/usr/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="2">
+    <RequiredPackages Count="1">
       <Item1>
-        <PackageName Value="lazwebextra"/>
-      </Item1>
-      <Item2>
         <PackageName Value="WebLaz"/>
-      </Item2>
+      </Item1>
     </RequiredPackages>
     <Units Count="4">
       <Unit0>
