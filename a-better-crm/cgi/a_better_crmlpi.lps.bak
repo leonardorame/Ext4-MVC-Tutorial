@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="a_better_crmlpi.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="a_better_crmlpi"/>
+        <UsageCount Value="20"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="customer_handler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CustomerHandler"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="customer_handler"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="32" Y="26"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="1" HistoryIndex="0">
+      <Position1>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="28" Column="22" TopLine="1"/>
+      </Position1>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

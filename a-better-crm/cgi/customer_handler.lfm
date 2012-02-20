@@ -1,0 +1,34 @@
+object CustomerHandler: TCustomerHandler
+  OldCreateOrder = False
+  Actions = <  
+    item
+      Name = 'read'
+      Default = False
+      OnRequest = read
+      Template.AllowTagParams = False
+    end  
+    item
+      Name = 'update'
+      Default = False
+      OnRequest = update
+      Template.AllowTagParams = False
+    end  
+    item
+      Name = 'insert'
+      Default = False
+      OnRequest = insert
+      Template.AllowTagParams = False
+    end  
+    item
+      Name = 'delete'
+      Default = False
+      OnRequest = delete
+      Template.AllowTagParams = False
+    end>
+  OnRequest = DataModuleRequest
+  CreateSession = False
+  Height = 136
+  HorizontalOffset = 250
+  VerticalOffset = 250
+  Width = 242
+end
