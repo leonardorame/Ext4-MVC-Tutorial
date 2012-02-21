@@ -19,8 +19,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="32" Y="26"/>
+        <TopLine Value="67"/>
+        <CursorPos X="1" Y="91"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -29,11 +29,43 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="1" HistoryIndex="0">
+    <JumpHistory Count="9" HistoryIndex="8">
       <Position1>
         <Filename Value="customer_handler.pas"/>
         <Caret Line="28" Column="22" TopLine="1"/>
       </Position1>
+      <Position2>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="39" Column="32" TopLine="9"/>
+      </Position2>
+      <Position3>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="36" Column="19" TopLine="11"/>
+      </Position3>
+      <Position4>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="24" Column="8" TopLine="12"/>
+      </Position4>
+      <Position5>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="32" Column="21" TopLine="14"/>
+      </Position5>
+      <Position6>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="17" Column="1" TopLine="1"/>
+      </Position6>
+      <Position7>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="50" Column="48" TopLine="33"/>
+      </Position7>
+      <Position8>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="44" Column="27" TopLine="29"/>
+      </Position8>
+      <Position9>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="17" Column="15" TopLine="2"/>
+      </Position9>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

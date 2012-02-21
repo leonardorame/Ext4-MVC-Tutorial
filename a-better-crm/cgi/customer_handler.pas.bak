@@ -84,7 +84,7 @@ begin
       lResponse.Add('success', true);
       lResponse.Add('root', lResult);
       AResponse.ContentType := 'application/json; charset=utf-8';
-      AResponse.Content := AnsiToUtf8(lResult.AsJSON);
+      AResponse.Content := AnsiToUtf8(lResponse.AsJSON);
     except
       on E: Exception do
       begin
@@ -137,7 +137,7 @@ begin
       lResponse.Add('root', lResult);
 
       AResponse.ContentType := 'application/json; charset=utf-8';
-      AResponse.Content := AnsiToUtf8(lResult.AsJSON);
+      AResponse.Content := AnsiToUtf8(lResponse.AsJSON);
     except
       on E: Exception do
       begin
@@ -222,7 +222,7 @@ begin
       lResponse.Add('root', lResult);
 
       AResponse.ContentType := 'application/json; charset=utf-8';
-      AResponse.Content := AnsiToUtf8(lResult.AsJSON);
+      AResponse.Content := AnsiToUtf8(lResponse.AsJSON);
     except
       on E: Exception do
       begin
