@@ -82,8 +82,9 @@ begin
         end;
       end;
       lResponse.Add('success', true);
-      lResponse.Add('items', lResult);
-      AResponse.Content := lResponse.AsJSON;
+      lResponse.Add('root', lResult);
+      AResponse.ContentType := 'application/json; charset=utf-8';
+      AResponse.Content := AnsiToUtf8(lResponse.AsJSON);
     except
       on E: Exception do
       begin
@@ -133,9 +134,10 @@ begin
       lStr.SaveToFile(lFile);
 
       lResponse.Add('success', true);
-      lResponse.Add('items', lResult);
+      lResponse.Add('root', lResult);
 
-      AResponse.Content := lResponse.AsJSON;
+      AResponse.ContentType := 'application/json; charset=utf-8';
+      AResponse.Content := AnsiToUtf8(lResponse.AsJSON);
     except
       on E: Exception do
       begin
@@ -166,8 +168,8 @@ begin
   lJSonParser := TJSONParser.Create(lStr);
   try
     lJSON := lJSonParser.Parse as TJSonObject;
-    AResponse.ContentType := 'text/json;charset=utf-8';
-    AResponse.Content := lJSON.AsJSON;
+    AResponse.ContentType := 'application/json; charset=utf-8';
+    AResponse.Content := AnsiToUtf8(lJSON.AsJSON);
   finally
     lJSonParser.Free;
     lStr.Free;
@@ -217,10 +219,10 @@ begin
         end;
       end;
       lResponse.Add('success', true);
-      lResponse.Add('items', lResult);
+      lResponse.Add('root', lResult);
 
-      AResponse.ContentType := 'text/json;charset=utf-8';
-      AResponse.Content := lResponse.AsJSON;
+      AResponse.ContentType := 'application/json; charset=utf-8';
+      AResponse.Content := AnsiToUtf8(lResponse.AsJSON);
     except
       on E: Exception do
       begin
