@@ -99,12 +99,24 @@
                 "app/controller/CustomerProperties.js"
             ],
             "className": "CustomerProperties"
+        },
+        "39ba7ffa-4502-4273-8b1d-c3e506bfd5b1": {
+            "paths": [
+                "app/model/Customer.js"
+            ],
+            "className": "Customer"
+        },
+        "7f08a0eb-e92c-4564-91da-8cef179a05a3": {
+            "paths": [
+                "app/model/User.js"
+            ],
+            "className": "User"
         }
     },
     "expandedState": {
         "data": true,
         "model": true,
-        "component": false,
+        "component": true,
         "controller": true
     }
 }

@@ -27,8 +27,8 @@ Ext.define('MyApp.controller.Main', {
     ],
     refs: [
         {
-            ref: 'viewport',
-            selector: 'viewport'
+            ref: 'viewportmain',
+            selector: 'viewportmain'
         }
     ],
 
@@ -42,9 +42,9 @@ Ext.define('MyApp.controller.Main', {
         mainView = Ext.create('MyApp.view.CustomerGrid', {flex: 1});
         // to be able to use "this.getViewport()" the a ref has to be added
         // please take a look at the refs section of this file.
-        item = this.getViewport().down('container[region=center]'); 
-        item.add(mainToolBar);
-        item.add(mainView);
+        center_container = this.getViewportmain().down('container[region=center]'); 
+        center_container.add(mainToolBar);
+        center_container.add(mainView);
         // load the store
         this.getCustomersStore().load();
     },

@@ -8,11 +8,19 @@
     "codeClass": null,
     "userConfig": {
         "designer|initialView": true,
+        "id": null,
         "layout": "border",
         "designer|userClassName": "MyViewport",
-        "designer|userAlias": "viewport"
+        "designer|userAlias": "viewportmain",
+        "xtype": "viewportmain"
     },
-    "customConfigs": [],
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "xtype",
+            "type": "string"
+        }
+    ],
     "designerId": "228c5040-742b-4412-a518-8b5bfd5863fd",
     "$viewOrder": 0,
     "expanded": false,
