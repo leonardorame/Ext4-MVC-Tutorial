@@ -1,0 +1,109 @@
+{
+    "id": "ExtBox1-ext-gen10576",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Customer"
+        ],
+        "stores": [
+            "Customers"
+        ],
+        "views": [
+            "CustomerGrid"
+        ],
+        "designer|init": "",
+        "designer|userClassName": "CustomerGrid",
+        "designer|userAlias": "customergrid"
+    },
+    "customConfigs": [],
+    "designerId": "7d2b1f36-2fff-42b8-bf43-e69b2b859ec6",
+    "$viewOrder": 3,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen10874",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEditClick",
+                "implHandler": "        // here we get the selected record in the grid\n        var grid = button.up('gridpanel');\n        var customer =  grid.getSelectionModel().getSelection()[0];\n\n        // get an instance of CustomerProperties controller and call its edit method.\n        this.getController('MyApp.controller.CustomerProperties').edit(customer, grid);",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "button[id=btnEdit]",
+                "designer|userClassName": "onEditClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen18463",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRefreshClick",
+                "implHandler": "        this.getCustomersStore().load();",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "button[id=btnRefresh]",
+                "designer|userClassName": "onRefreshClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen26058",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onInsertClick",
+                "implHandler": "        var grid = button.up('gridpanel');\n\n        // get an instance of CustomerProperties controller and call its insert method.\n        this.getController('MyApp.controller.CustomerProperties').insert(grid);",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "button[id=btnInsert]",
+                "designer|userClassName": "onInsertClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen27413",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeleteClick",
+                "implHandler": "        Ext.Msg.show({\n            title:'Delete record?',\n            msg: 'Please configrm',\n            buttons: Ext.Msg.YESNO,\n            icon: Ext.Msg.QUESTION,\n            fn: function(btn, text) {\n                if(btn == 'yes') {\n                    record =  button.up('gridpanel').getSelectionModel().getSelection()[0];\n                    var store = this.getCustomersStore();\n                    store.remove(record);\n                    store.sync();\n                }\n            },\n            scope: this\n        });",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "button[id=btnDelete]",
+                "designer|userClassName": "onDeleteClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

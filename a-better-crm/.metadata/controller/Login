@@ -1,0 +1,66 @@
+{
+    "id": "ExtBox1-ext-gen21468",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "stores": [
+            "User"
+        ],
+        "views": [
+            "LoginForm",
+            "MainToolbar"
+        ],
+        "designer|init": "",
+        "designer|userClassName": "Login"
+    },
+    "customConfigs": [],
+    "designerId": "7051e9b8-90f2-4246-b6c1-deb8e94fc3f8",
+    "$viewOrder": 1,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen21717",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLoginClick",
+                "implHandler": "        this.getController('MyApp.controller.Main').showMainView();\n        this.getController('MyApp.controller.User').saveSession(); \n        var win = button.up('loginform');\n        win.destroy();",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "loginform button[id=btnSubmit]",
+                "designer|userClassName": "onLoginClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen28372",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLogoutClick",
+                "implHandler": "        console.log('logout');\n        this.getController('MyApp.controller.Main').destroyAll();\n        this.getController('MyApp.controller.User').deleteSession(); \n\n        Ext.create('MyApp.view.LoginForm', {}).show();",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "maintoolbar button[id=btnLogout]",
+                "designer|userClassName": "onLogoutClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}
