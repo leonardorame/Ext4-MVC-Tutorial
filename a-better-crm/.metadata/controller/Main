@@ -23,7 +23,7 @@
     "customConfigs": [],
     "designerId": "71b302e4-f5f1-4d85-80fd-769279213c74",
     "$viewOrder": 2,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen22922",
@@ -35,7 +35,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "showMainView",
-                "implHandler": "mainToolBar = Ext.create('MyApp.view.MainToolbar', {});\nmainView = Ext.create('MyApp.view.CustomerGrid', {flex: 1});\n// to be able to use \"this.getViewport()\" the a ref has to be added\n// please take a look at the refs section of this file.\nvar center_container = this.getViewportmain().down('container[region=center]'); \ncenter_container.add(mainToolBar);\ncenter_container.add(mainView);\n// load the store\nthis.getCustomersStore().load();",
+                "implHandler": "        mainToolBar = Ext.create('MyApp.view.MainToolbar', {});\n        mainView = Ext.create('MyApp.view.CustomerGrid', {flex: 1});\n        // to be able to use \"this.getViewport()\" the a ref has to be added\n        // please take a look at the refs section of this file.\n        var center_container = this.getViewportmain().down('container[region=center]'); \n        center_container.add(mainToolBar);\n        center_container.add(mainView);\n        // load the store\n        this.getCustomersStore().load();",
                 "designer|userClassName": "showMainView"
             },
             "customConfigs": [],

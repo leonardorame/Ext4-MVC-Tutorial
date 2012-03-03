@@ -20,7 +20,7 @@
     "customConfigs": [],
     "designerId": "7051e9b8-90f2-4246-b6c1-deb8e94fc3f8",
     "$viewOrder": 1,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen21717",
@@ -32,7 +32,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onLoginClick",
-                "implHandler": "        this.getController('MyApp.controller.Main').showMainView();\n        this.getController('MyApp.controller.User').saveSession(); \n        var win = button.up('loginform');\n        win.destroy();",
+                "implHandler": "var win = button.up('loginform');\nvar frm = win.getForm();\nfrm.submit({\n    success: function(form, action){\n        console.log('success');\n        var UserController = this.getController('MyApp.controller.User');\n        this.getController('MyApp.controller.Main').showMainView();\n        UserController.saveSession(); \n        win.destroy();\n    },\n    failure: function(form, action){\n        switch(action.failureType){\n            case Ext.form.Action.CLIENT_INVALID:\n            Ext.Msg.alert('Failure', 'Please complete the required fields.');\n            break;\n            case Ext.form.Action.CONNECT_FAILURE:\n            Ext.Msg.alert('Failure', 'Ajax communication failed.');\n            break;\n            case Ext.form.Action.SERVER_INVALID:\n            Ext.Msg.alert('Failure', action.result.msg);\n            break;                \n        }\n    },\n    scope: this\n});",
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
@@ -52,7 +52,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onLogoutClick",
-                "implHandler": "        console.log('logout');\n        this.getController('MyApp.controller.Main').destroyAll();\n        this.getController('MyApp.controller.User').deleteSession(); \n\n        Ext.create('MyApp.view.LoginForm', {}).show();",
+                "implHandler": "        this.getController('MyApp.controller.Main').destroyAll();\n        this.getController('MyApp.controller.User').deleteSession(); \n\n        Ext.create('MyApp.view.LoginForm', {}).show();",
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",

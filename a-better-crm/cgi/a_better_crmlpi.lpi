@@ -37,7 +37,7 @@
         <PackageName Value="WebLaz"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="a_better_crmlpi.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -50,6 +50,13 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="customer_handler"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="login_handler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="LoginHandler"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="login_handler"/>
+      </Unit2>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

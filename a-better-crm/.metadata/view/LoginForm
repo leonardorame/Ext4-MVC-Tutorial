@@ -14,13 +14,14 @@
         "width": 302,
         "bodyPadding": 10,
         "title": "Login",
+        "url": "/cgi-bin/a_better_crm/login/check",
         "designer|userClassName": "LoginForm",
         "designer|userAlias": "loginform"
     },
     "customConfigs": [],
     "designerId": "3437cbb8-7aa3-4252-be5e-33ce4fe24bc7",
     "$viewOrder": 1,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen5699",
@@ -81,6 +82,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "userName",
                 "fieldLabel": "Username",
                 "allowBlank": false,
                 "designer|userClassName": "MyTextField",
@@ -99,6 +101,7 @@
             "codeClass": null,
             "userConfig": {
                 "inputType": "password",
+                "name": "passWord",
                 "fieldLabel": "Password",
                 "allowBlank": false,
                 "designer|userClassName": "MyTextField1",

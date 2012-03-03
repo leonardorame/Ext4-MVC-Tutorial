@@ -3,12 +3,17 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="a_better_crmlpi.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="a_better_crmlpi"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="33"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="customer_handler.pas"/>
@@ -16,20 +21,34 @@
         <ComponentName Value="CustomerHandler"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="customer_handler"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="67"/>
-        <CursorPos X="1" Y="91"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="177"/>
+        <CursorPos X="70" Y="201"/>
+        <UsageCount Value="33"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="login_handler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="LoginHandler"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="login_handler"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="29"/>
+        <CursorPos X="32" Y="48"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="9" HistoryIndex="8">
+    <JumpHistory Count="17" HistoryIndex="16">
       <Position1>
         <Filename Value="customer_handler.pas"/>
         <Caret Line="28" Column="22" TopLine="1"/>
@@ -66,6 +85,38 @@
         <Filename Value="customer_handler.pas"/>
         <Caret Line="17" Column="15" TopLine="2"/>
       </Position9>
+      <Position10>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="85" Column="26" TopLine="67"/>
+      </Position10>
+      <Position11>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="136" Column="26" TopLine="111"/>
+      </Position11>
+      <Position12>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="220" Column="26" TopLine="195"/>
+      </Position12>
+      <Position13>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="133" Column="46" TopLine="118"/>
+      </Position13>
+      <Position14>
+        <Filename Value="customer_handler.pas"/>
+        <Caret Line="16" Column="1" TopLine="16"/>
+      </Position14>
+      <Position15>
+        <Filename Value="login_handler.pas"/>
+        <Caret Line="39" Column="28" TopLine="9"/>
+      </Position15>
+      <Position16>
+        <Filename Value="login_handler.pas"/>
+        <Caret Line="18" Column="20" TopLine="11"/>
+      </Position16>
+      <Position17>
+        <Filename Value="login_handler.pas"/>
+        <Caret Line="6" Column="53" TopLine="1"/>
+      </Position17>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

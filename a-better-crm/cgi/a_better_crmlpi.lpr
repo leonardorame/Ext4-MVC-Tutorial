@@ -3,7 +3,7 @@ program a_better_crmlpi;
 {$mode objfpc}{$H+}
 
 uses
-  fpCGI, customer_handler;
+  fpCGI, customer_handler, login_handler;
 
 begin
   Application.Initialize;

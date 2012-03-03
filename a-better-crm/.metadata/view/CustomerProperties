@@ -19,7 +19,7 @@
     "customConfigs": [],
     "designerId": "aeefff17-9d80-451e-b68c-305bd9b373bb",
     "$viewOrder": 4,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen8039",
@@ -110,7 +110,7 @@
                 "dock": null
             },
             "customConfigs": [],
-            "expanded": false,
+            "expanded": true,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen4310",

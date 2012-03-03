@@ -23,9 +23,14 @@ Ext.define('MyApp.view.ui.LoginForm', {
     width: 302,
     bodyPadding: 10,
     title: 'Login',
+    url: '/cgi-bin/a_better_crm/login/check',
 
     initComponent: function() {
         var me = this;
+
+        me.initialConfig = Ext.apply({
+            url: '/cgi-bin/a_better_crm/login/check'
+        }, me.initialConfig);
 
         Ext.applyIf(me, {
             dockedItems: [
@@ -48,6 +53,7 @@ Ext.define('MyApp.view.ui.LoginForm', {
             items: [
                 {
                     xtype: 'textfield',
+                    name: 'userName',
                     fieldLabel: 'Username',
                     allowBlank: false,
                     anchor: '100%'
@@ -55,6 +61,7 @@ Ext.define('MyApp.view.ui.LoginForm', {
                 {
                     xtype: 'textfield',
                     inputType: 'password',
+                    name: 'passWord',
                     fieldLabel: 'Password',
                     allowBlank: false,
                     anchor: '100%'

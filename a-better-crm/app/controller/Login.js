@@ -34,10 +34,31 @@ Ext.define('MyApp.controller.Login', {
     },
 
     onLoginClick: function(button, e, options) {
-        this.getController('MyApp.controller.Main').showMainView();
-        this.getController('MyApp.controller.User').saveSession(); 
         var win = button.up('loginform');
-        win.destroy();
+        var frm = win.getForm();
+        frm.submit({
+            success: function(form, action){
+                console.log('success');
+                var UserController = this.getController('MyApp.controller.User');
+                this.getController('MyApp.controller.Main').showMainView();
+                UserController.saveSession(); 
+                win.destroy();
+            },
+            failure: function(form, action){
+                switch(action.failureType){
+                    case Ext.form.Action.CLIENT_INVALID:
+                    Ext.Msg.alert('Failure', 'Please complete the required fields.');
+                    break;
+                    case Ext.form.Action.CONNECT_FAILURE:
+                    Ext.Msg.alert('Failure', 'Ajax communication failed.');
+                    break;
+                    case Ext.form.Action.SERVER_INVALID:
+                    Ext.Msg.alert('Failure', action.result.msg);
+                    break;                
+                }
+            },
+            scope: this
+        });
     },
 
     onLogoutClick: function(button, e, options) {
