@@ -38,7 +38,6 @@ Ext.define('MyApp.controller.Login', {
         var frm = win.getForm();
         frm.submit({
             success: function(form, action){
-                console.log('success');
                 var UserController = this.getController('MyApp.controller.User');
                 this.getController('MyApp.controller.Main').showMainView();
                 UserController.saveSession(); 
