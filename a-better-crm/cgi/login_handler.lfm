@@ -1,0 +1,15 @@
+object LoginHandler: TLoginHandler
+  OldCreateOrder = False
+  Actions = <  
+    item
+      Name = 'check'
+      Default = False
+      OnRequest = checkRequest
+      Template.AllowTagParams = False
+    end>
+  CreateSession = False
+  Height = 143
+  HorizontalOffset = 753
+  VerticalOffset = 245
+  Width = 179
+end
