@@ -27,12 +27,12 @@ Ext.application({
     name: 'MyApp',
 
     controllers: [
-        'User',
-        'Login',
-        'Main',
-        'CustomerGrid',
-        'CustomerProperties',
-        'UserProperties'
+        'MyApp.controller.User',
+        'MyApp.controller.Login',
+        'MyApp.controller.Main',
+        'MyApp.controller.CustomerGrid',
+        'MyApp.controller.CustomerProperties',
+        'MyApp.controller.UserProperties'
     ],
 
     launch: function() {
