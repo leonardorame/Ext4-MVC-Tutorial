@@ -24,13 +24,13 @@ Ext.define('MyApp.view.LoginForm', {
     width: 302,
     bodyPadding: 10,
     title: 'Login',
-    url: '/cgi-bin/a_better_crm/login/check',
+    url: '/cgi-bin/a_better_crm/users/check',
 
     initComponent: function() {
         var me = this;
 
         me.initialConfig = Ext.apply({
-            url: '/cgi-bin/a_better_crm/login/check'
+            url: '/cgi-bin/a_better_crm/users/check'
         }, me.initialConfig);
 
         Ext.applyIf(me, {

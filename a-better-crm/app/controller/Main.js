@@ -16,15 +16,15 @@
 Ext.define('MyApp.controller.Main', {
     extend: 'Ext.app.Controller',
 
-    models: [
-        'Customer'
-    ],
     stores: [
-        'Customers'
+        'Customers',
+        'Users'
     ],
     views: [
+        'MainToolbar',
+        'MainTabPanel',
         'CustomerGrid',
-        'MainToolbar'
+        'UsersGrid'
     ],
     refs: [
         {
@@ -40,14 +40,21 @@ Ext.define('MyApp.controller.Main', {
 
     showMainView: function() {
         mainToolBar = Ext.create('MyApp.view.MainToolbar', {});
-        mainView = Ext.create('MyApp.view.CustomerGrid', {flex: 1});
+        mainView = Ext.create('MyApp.view.MainTabPanel', {flex: 1});
+        var customerGrid = Ext.create('MyApp.view.CustomerGrid', {flex: 1});
+        var usersGrid =  Ext.create('MyApp.view.UsersGrid', {flex: 1});
         // to be able to use "this.getViewport()" the a ref has to be added
         // please take a look at the refs section of this file.
         var center_container = this.getViewportmain().down('container[region=center]'); 
         center_container.add(mainToolBar);
         center_container.add(mainView);
-        // load the store
+        var customersTab = Ext.getCmp('customers-tab');
+        var usersTab = Ext.getCmp('users-tab');
+        customersTab.add(customerGrid);
+        usersTab.add(usersGrid);
+        // load the stores
         this.getCustomersStore().load();
+        this.getUsersStore().load();
     },
 
     destroyAll: function() {

@@ -20,11 +20,64 @@ Ext.define('MyApp.controller.User', {
         'User'
     ],
     stores: [
-        
+        'Users'
+    ],
+    views: [
+        'UsersGrid'
     ],
     init: function() {
         this.control({
+            "button[id=btnUserDelete]": {
+                click: this.onDeleteClick
+            },
+            "button[id=btnUserInsert]": {
+                click: this.onInsertClick
+            },
+            "button[id=btnUserUpdate]": {
+                click: this.onUpdateClick
+            },
+            "button[id=btnUserRefresh]": {
+                click: this.onRefreshClick
+            }
         });
+    },
+
+    onDeleteClick: function(button, e, options) {
+        Ext.Msg.show({
+            title:'Delete record?',
+            msg: 'Please configrm',
+            buttons: Ext.Msg.YESNO,
+            icon: Ext.Msg.QUESTION,
+            fn: function(btn, text) {
+                if(btn == 'yes') {
+                    record =  button.up('gridpanel').getSelectionModel().getSelection()[0];
+                    var store = this.getUsersStore();
+                    store.remove(record);
+                    store.sync();
+                }
+            },
+            scope: this
+        });  
+    },
+
+    onInsertClick: function(button, e, options) {
+        var grid = button.up('gridpanel');
+
+        // get an instance of UserProperties controller and call its insert method.
+        this.getController('MyApp.controller.UserProperties').insert(grid);  
+    },
+
+    onUpdateClick: function(button, e, options) {
+        // here we get the selected record in the grid
+        var grid = button.up('gridpanel');
+        var user =  grid.getSelectionModel().getSelection()[0];
+
+        // get an instance of UserProperties controller and call its edit method.
+        this.getController('MyApp.controller.UserProperties').edit(user, grid);
+    },
+
+    onRefreshClick: function(button, e, options) {
+        this.getUsersStore().load();  
     },
 
     saveSession: function() {
@@ -44,6 +97,10 @@ Ext.define('MyApp.controller.User', {
         user.loggedIn = Ext.util.Cookies.get('loggedIn');
 
         return user;
+    },
+
+    onControllerClickStub: function() {
+
     }
 
 });

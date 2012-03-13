@@ -5,8 +5,7 @@ unit login_handler;
 interface
 
 uses
-  SysUtils, Classes, httpdefs, fpHTTP, fpWeb, fpjson,
-  IniFiles;
+  SysUtils, Classes, httpdefs, fpHTTP, fpWeb, fpjson, jsonparser;
 
 type
 
@@ -14,6 +13,14 @@ type
 
   TLoginHandler = class(TFPWebModule)
     procedure checkRequest(Sender: TObject; ARequest: TRequest;
+      AResponse: TResponse; var Handled: Boolean);
+    procedure deleteRequest(Sender: TObject; ARequest: TRequest;
+      AResponse: TResponse; var Handled: Boolean);
+    procedure insertRequest(Sender: TObject; ARequest: TRequest;
+      AResponse: TResponse; var Handled: Boolean);
+    procedure readRequest(Sender: TObject; ARequest: TRequest;
+      AResponse: TResponse; var Handled: Boolean);
+    procedure updateRequest(Sender: TObject; ARequest: TRequest;
       AResponse: TResponse; var Handled: Boolean);
   private
     function authenticate(AUser, APass: string): boolean;
@@ -32,21 +39,38 @@ implementation
 
 function TLoginHandler.authenticate(AUser, APass: string): boolean;
 var
-  lIni: TIniFile;
   lUsername: string;
   lPassword: string;
+  lJSonParser: TJSONParser;
+  lStr: TFileStream;
+  lFile: string;
+  lJSON: TJSONObject;
+  lArray: TJSONArray;
+  I: Integer;
+
 begin
   Result := False;
-  lIni := TIniFile.Create('users.ini');
+  lFile := 'users.json';
+  lStr := TFileStream.Create(lFile, fmOpenRead);
+  lJSonParser := TJSONParser.Create(lStr);
   try
-    lUsername := lIni.ReadString('default', 'UserName', 'admin');  
-    lPassword := lIni.ReadString('default', 'Password', 'admin');  
-    if (AUser = lUsername) and (APass = lPassword) then
+
+    (* Traverse data finding by Id *)
+    lJSON := lJSonParser.Parse as TJSonObject;
+    lArray := lJSON.Arrays['root'];
+    for I := 0 to lArray.Count - 1 do
     begin
-      Result := True;
+      lUsername := (lArray.Objects[I] as TJsonObject).Strings['username'];
+      lPassword := (lArray.Objects[I] as TJsonObject).Strings['password'];
+      if (AUser = lUsername) and (APass = lPassword) then
+      begin
+        Result := True;
+        Break;
+      end;
     end;
   finally
-    lIni.Free;
+    lJSonParser.Free;
+    lStr.Free;
   end;
 end;
 
@@ -83,7 +107,200 @@ begin
   Handled := True;
 end;
 
+procedure TLoginHandler.deleteRequest(Sender: TObject; ARequest: TRequest;
+  AResponse: TResponse; var Handled: Boolean);
+var
+  lResponse: TJSONObject;
+  lJSON: TJSONObject;
+  lResult: TJSONObject;
+  lArray: TJSONArray;
+  lJSonParser: TJSONParser;
+  lStr: TStringList;
+  lFile: string;
+  I: Integer;
+
+begin
+  (* Load "database" *)
+  lFile := 'users.json';
+  lStr := TStringList.Create;
+  lStr.LoadFromFile(lFile);
+  lJSonParser := TJSONParser.Create(lStr.Text);
+  lResponse :=TJSONObject.Create;
+  try
+    try
+      (* Assign values to local variables *)
+      lResult := TJSONParser.Create(ARequest.Content).Parse as TJSONObject;
+
+      (* Traverse data finding by Id *)
+      lJSON := lJSonParser.Parse as TJSonObject;
+      lArray := lJSON.Arrays['root'];
+      for I := 0 to lArray.Count - 1 do
+      begin
+        if lResult.Integers['id'] = (lArray.Objects[I] as TJsonObject).Integers['id'] then
+        begin
+          lArray.Delete(I);
+          lStr.Text := lJSon.AsJSON;
+          lStr.SaveToFile(lFile);
+          Break;
+        end;
+      end;
+      lResponse.Add('success', true);
+      lResponse.Add('root', lResult);
+      AResponse.ContentType := 'application/json; charset=utf-8';
+      AResponse.Content := AnsiToUtf8(lResponse.AsJSON);
+    except
+      on E: Exception do
+      begin
+        lResponse.Add('success', false);
+        lResponse.Add('msg', E.Message);
+        AResponse.Content := lResponse.AsJSON;
+      end;
+    end;
+  finally
+    lResponse.Free;
+    lJSonParser.Free;
+    lStr.Free;
+  end;
+
+  Handled := True;
+end;
+
+procedure TLoginHandler.insertRequest(Sender: TObject; ARequest: TRequest;
+  AResponse: TResponse; var Handled: Boolean);
+var
+  lResponse: TJSONObject;
+  lJSON: TJSONObject;
+  lResult: TJSONObject;
+  lArray: TJSONArray;
+  lJSonParser: TJSONParser;
+  lStr: TStringList;
+  lFile: string;
+
+begin
+  Randomize;
+  (* Load "users database" *)
+  lFile := 'users.json';
+  lStr := TStringList.Create;
+  lStr.LoadFromFile(lFile);
+  lJSonParser := TJSONParser.Create(lStr.Text);
+  lResponse :=TJSONObject.Create;
+  try
+    try
+      lJSON := lJSonParser.Parse as TJSonObject;
+      lArray := lJSON.Arrays['root'];
+      (* Assign values to local variables *)
+      lResult := TJSONParser.Create(ARequest.Content).Parse as TJSONObject;
+      lResult.Integers['id'] := Random(1000);
+      lArray.Add(lResult);
+      (* Save the file *)
+      lStr.Text:= lJSON.AsJSON;
+      lStr.SaveToFile(lFile);
+
+      lResponse.Add('success', true);
+      lResponse.Add('root', lResult);
+
+      AResponse.ContentType := 'application/json; charset=utf-8';
+      AResponse.Content := AnsiToUtf8(lResponse.AsJSON);
+    except
+      on E: Exception do
+      begin
+        lResponse.Add('success', false);
+        lResponse.Add('msg', E.Message);
+        AResponse.Content := lResponse.AsJSON;
+      end;
+    end;
+  finally
+    lResponse.Free;
+    lJSonParser.Free;
+    lStr.Free;
+  end;
+  Handled := True;
+end;
+
+procedure TLoginHandler.readRequest(Sender: TObject; ARequest: TRequest;
+  AResponse: TResponse; var Handled: Boolean);
+var
+  lJSonParser: TJSONParser;
+  lStr: TFileStream;
+  lFile: string;
+  lJSON: TJSONObject;
+
+begin
+  lFile := 'users.json';
+  lStr := TFileStream.Create(lFile, fmOpenRead);
+  lJSonParser := TJSONParser.Create(lStr);
+  try
+    lJSON := lJSonParser.Parse as TJSonObject;
+    AResponse.ContentType := 'application/json; charset=utf-8';
+    AResponse.Content := AnsiToUtf8(lJSON.AsJSON);
+  finally
+    lJSonParser.Free;
+    lStr.Free;
+  end;
+  Handled := True;
+end;
+
+procedure TLoginHandler.updateRequest(Sender: TObject; ARequest: TRequest;
+  AResponse: TResponse; var Handled: Boolean);
+var
+  lResponse: TJSONObject;
+  lJSON: TJSONObject;
+  lResult: TJSONObject;
+  lArray: TJSONArray;
+  lJSonParser: TJSONParser;
+  lStr: TStringList;
+  lFile: string;
+  I: Integer;
+begin
+  (* Load "database" *)
+  lFile := 'users.json';
+  lStr := TStringList.Create;
+  lStr.LoadFromFile(lFile);
+  lJSonParser := TJSONParser.Create(lStr.Text);
+  lResponse :=TJSONObject.Create;
+  try
+    try
+      (* Assign values to local variables *)
+      lResult := TJSONParser.Create(ARequest.Content).Parse as TJSONObject;
+
+      (* Traverse data finding by Id *)
+      lJSON := lJSonParser.Parse as TJSonObject;
+      lArray := lJSON.Arrays['root'];
+      for I := 0 to lArray.Count - 1 do
+      begin
+        if lResult.Integers['id'] = (lArray.Objects[I] as TJsonObject).Integers['id'] then
+        begin
+          (* Assign field values *)
+          (lArray.Objects[I] as TJsonObject).Strings['username'] := lResult.Strings['username'];
+          (lArray.Objects[I] as TJsonObject).Strings['password'] := lResult.Strings['password'];
+          lStr.Text := lJSon.AsJSON;
+          lStr.SaveToFile(lFile);
+          Break;
+        end;
+      end;
+      lResponse.Add('success', true);
+      lResponse.Add('root', lResult);
+
+      AResponse.ContentType := 'application/json; charset=utf-8';
+      AResponse.Content := AnsiToUtf8(lResponse.AsJSON);
+    except
+      on E: Exception do
+      begin
+        lResponse.Add('success', false);
+        lResponse.Add('msg', E.Message);
+        AResponse.Content := lResponse.AsJSON;
+      end;
+    end;
+  finally
+    lResponse.Free;
+    lJSonParser.Free;
+    lStr.Free;
+  end;
+
+  Handled := True;
+end;
+
 initialization
-  RegisterHTTPModule('login', TLoginHandler);
+  RegisterHTTPModule('users', TLoginHandler);
 end.
 

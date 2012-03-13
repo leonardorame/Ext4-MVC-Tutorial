@@ -20,7 +20,10 @@ Ext.define('MyApp.view.Viewport', {
         'MyApp.view.MyViewport',
         'MyApp.view.LoginForm',
         'MyApp.view.CustomerGrid',
+        'MyApp.view.UsersGrid',
         'MyApp.view.MainToolbar',
-        'MyApp.view.CustomerProperties'
+        'MyApp.view.CustomerProperties',
+        'MyApp.view.UserProperties',
+        'MyApp.view.MainTabPanel'
     ]
 });

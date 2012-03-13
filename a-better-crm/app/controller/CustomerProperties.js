@@ -89,9 +89,6 @@ Ext.define('MyApp.controller.CustomerProperties', {
         mode="Insert";
         this.getCustomersStore().setGrid(grid);
 
-        // create an instance of CustomerProperties form
-        var cp = Ext.create('MyApp.view.CustomerProperties', {});
-
         // Show the form
         cp.show();
     },

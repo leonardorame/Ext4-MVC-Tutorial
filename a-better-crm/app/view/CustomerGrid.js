@@ -19,6 +19,7 @@ Ext.define('MyApp.view.CustomerGrid', {
 
     autoShow: true,
     id: 'customergrid',
+    frameHeader: false,
     title: 'Customer\'s listing',
     forceFit: true,
     store: 'Customers',
@@ -28,7 +29,7 @@ Ext.define('MyApp.view.CustomerGrid', {
 
         Ext.applyIf(me, {
             viewConfig: {
-
+                loadMask: false
             },
             dockedItems: [
                 {

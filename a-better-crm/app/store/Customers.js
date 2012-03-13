@@ -8,17 +8,44 @@
  * License of Sencha Designer does not include license for Ext JS 4.0.x. For more
  * details see http://www.sencha.com/license or contact license@sencha.com.
  *
- * You should implement event handling and custom methods in this
- * class.
+ * This file will be auto-generated each and everytime you save your project.
+ *
+ * Do NOT hand edit this file.
  */
 
 Ext.define('MyApp.store.Customers', {
-    extend: 'MyApp.store.base.Customers',
+    extend: 'Ext.data.Store',
+    requires: [
+        'MyApp.model.Customer'
+    ],
 
     constructor: function(cfg) {
         var me = this;
         cfg = cfg || {};
-        me.callParent([Ext.apply({}, cfg)]);
+        me.callParent([Ext.apply({
+            storeId: 'Customers',
+            model: 'MyApp.model.Customer',
+            proxy: {
+                type: 'ajax',
+                api: {
+                    read: '/cgi-bin/a_better_crm/customers/read',
+                    create: '/cgi-bin/a_better_crm/customers/insert',
+                    update: '/cgi-bin/a_better_crm/customers/update',
+                    destroy: '/cgi-bin/a_better_crm/customers/delete'
+                },
+                reader: {
+                    type: 'json',
+                    idProperty: 'id',
+                    root: 'root'
+                }
+            },
+            listeners: {
+                write: {
+                    fn: me.onJsonstoreWrite,
+                    scope: me
+                }
+            }
+        }, cfg)]);
     },
 
     onJsonstoreWrite: function(store, operation, options) {

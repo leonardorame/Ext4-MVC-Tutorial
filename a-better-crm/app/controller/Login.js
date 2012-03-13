@@ -64,8 +64,9 @@ Ext.define('MyApp.controller.Login', {
     onLogoutClick: function(button, e, options) {
         this.getController('MyApp.controller.Main').destroyAll();
         this.getController('MyApp.controller.User').deleteSession(); 
-
         Ext.create('MyApp.view.LoginForm', {}).show();
+
+
     },
 
     onControllerClickStub: function() {

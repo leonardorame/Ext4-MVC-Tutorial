@@ -6,6 +6,30 @@ object LoginHandler: TLoginHandler
       Default = False
       OnRequest = checkRequest
       Template.AllowTagParams = False
+    end  
+    item
+      Name = 'delete'
+      Default = False
+      OnRequest = deleteRequest
+      Template.AllowTagParams = False
+    end  
+    item
+      Name = 'insert'
+      Default = False
+      OnRequest = insertRequest
+      Template.AllowTagParams = False
+    end  
+    item
+      Name = 'read'
+      Default = False
+      OnRequest = readRequest
+      Template.AllowTagParams = False
+    end  
+    item
+      Name = 'update'
+      Default = False
+      OnRequest = updateRequest
+      Template.AllowTagParams = False
     end>
   CreateSession = False
   Height = 143

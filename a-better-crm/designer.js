@@ -18,10 +18,6 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
-    stores: [
-        
-    ],
-
     views: [
         'MyViewport'
     ],
@@ -31,17 +27,18 @@ Ext.application({
     name: 'MyApp',
 
     controllers: [
-        'MyApp.controller.User',
-        'MyApp.controller.Login',
-        'MyApp.controller.Main',
-        'MyApp.controller.CustomerGrid',
-        'MyApp.controller.CustomerProperties'
+        'User',
+        'Login',
+        'Main',
+        'CustomerGrid',
+        'CustomerProperties',
+        'UserProperties'
     ],
 
     launch: function() {
         var user = this.getController('MyApp.controller.User').getUser();
 
-        if(user.loggedIn != "true") {
+        if(user.loggedIn == "false") {
             Ext.create('MyApp.view.LoginForm', {}).show();
         }
         else

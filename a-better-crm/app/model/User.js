@@ -16,6 +16,8 @@
 Ext.define('MyApp.model.User', {
     extend: 'Ext.data.Model',
 
+    idProperty: 'id',
+
     fields: [
         {
             name: 'id',
@@ -24,6 +26,12 @@ Ext.define('MyApp.model.User', {
         {
             name: 'loggedIn',
             type: 'boolean'
+        },
+        {
+            name: 'username'
+        },
+        {
+            name: 'password'
         }
     ]
 });

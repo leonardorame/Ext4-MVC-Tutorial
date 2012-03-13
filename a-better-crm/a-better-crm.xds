@@ -18,7 +18,7 @@
         "cssPath": ""
     },
     "xdsVersion": "2.0.0",
-    "xdsBuild": "309",
+    "xdsBuild": "311",
     "framework": "ext40",
     "topInstanceFileMap": {
         "228c5040-742b-4412-a518-8b5bfd5863fd": {
@@ -125,12 +125,52 @@
                 "app/model/User.js"
             ],
             "className": "User"
+        },
+        "7da1f363-10fc-44a5-82e7-555e69ac8f42": {
+            "paths": [
+                "metadata/view/MainTabPanel",
+                "app/view/override/MainTabPanel.js",
+                "app/view/MainTabPanel.js"
+            ],
+            "className": "MainTabPanel"
+        },
+        "f9786c7f-7c26-407e-a1dd-4f2fd1298205": {
+            "paths": [
+                "metadata/view/UsersGrid",
+                "app/view/override/UsersGrid.js",
+                "app/view/UsersGrid.js"
+            ],
+            "className": "UsersGrid"
+        },
+        "23d45ffc-9e68-48bc-8ed0-0386cdc91a1c": {
+            "paths": [
+                "metadata/store/Users",
+                "app/store/override/Users.js",
+                "app/store/Users.js"
+            ],
+            "className": "Users"
+        },
+        "553eadd7-25eb-4a07-8444-fd1424450e20": {
+            "paths": [
+                "metadata/view/UserProperties",
+                "app/view/override/UserProperties.js",
+                "app/view/UserProperties.js"
+            ],
+            "className": "UserProperties"
+        },
+        "357144a4-d8c0-4bb5-bff8-2f60007de19f": {
+            "paths": [
+                "metadata/controller/UserProperties",
+                "app/controller/override/UserProperties.js",
+                "app/controller/UserProperties.js"
+            ],
+            "className": "UserProperties"
         }
     },
     "expandedState": {
         "data": true,
-        "model": true,
-        "component": false,
+        "model": false,
+        "component": true,
         "controller": true
     }
 }
