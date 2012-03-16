@@ -80,27 +80,41 @@ Ext.define('MyApp.controller.User', {
         this.getUsersStore().load();  
     },
 
-    saveSession: function() {
-        Ext.util.Cookies.set('loggedIn', true);
+    saveSession: function(userId) {
+        Ext.util.Cookies.set('a_better_crm_userid', userId);
     },
 
     deleteSession: function() {
-        Ext.util.Cookies.set('loggedIn', false);
-
+        Ext.util.Cookies.clear('a_better_crm_userid');
     },
 
-    getUser: function() {
+    getUser: function(successLoginHandler) {
         var user = new Ext.ModelManager.getModel({
             loggedIn : false
         }, 'User');
 
-        user.loggedIn = Ext.util.Cookies.get('loggedIn');
+        user.id = Ext.util.Cookies.get('a_better_crm_userid');
+        user.loggedIn = "false";
 
+        Ext.Ajax.request({
+        url : '/cgi-bin/a_better_crm/users/controlExpiration?id=' + user.id,
+                method: 'GET',
+                success: function ( result, request ) {
+                    var jsonData = Ext.JSON.decode(result.responseText);
+                    if(jsonData.success == false) 
+                    { 
+                      Ext.create('MyApp.view.LoginForm', {}).show();
+                    }
+                    else
+                    {
+                      successLoginHandler();
+                    }
+             }
+        });
         return user;
     },
 
     onControllerClickStub: function() {
-
     }
 
 });

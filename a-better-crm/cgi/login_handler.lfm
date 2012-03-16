@@ -30,6 +30,12 @@ object LoginHandler: TLoginHandler
       Default = False
       OnRequest = updateRequest
       Template.AllowTagParams = False
+    end  
+    item
+      Name = 'controlExpiration'
+      Default = False
+      OnRequest = controlExpirationRequest
+      Template.AllowTagParams = False
     end>
   CreateSession = False
   Height = 143

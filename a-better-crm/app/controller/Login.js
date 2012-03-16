@@ -41,7 +41,9 @@ Ext.define('MyApp.controller.Login', {
             success: function(form, action){
                 var UserController = this.getController('MyApp.controller.User');
                 this.getController('MyApp.controller.Main').showMainView();
-                UserController.saveSession(); 
+                var jsonData = Ext.JSON.decode(action.response.responseText);
+                var userId = jsonData.data.id;
+                UserController.saveSession(userId); 
                 win.destroy();
             },
             failure: function(form, action){

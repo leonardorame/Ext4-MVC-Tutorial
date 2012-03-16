@@ -35,16 +35,12 @@ Ext.application({
         'MyApp.controller.UserProperties'
     ],
 
+
     launch: function() {
-        var user = this.getController('MyApp.controller.User').getUser();
-
-        if(user.loggedIn == "false") {
-            Ext.create('MyApp.view.LoginForm', {}).show();
+        me = this;
+        var onSuccessLogin = function(){
+          me.getController('MyApp.controller.Main').showMainView();
         }
-        else
-        {
-            this.getController('MyApp.controller.Main').showMainView();
-        }
-
+        var user = this.getController('MyApp.controller.User').getUser(onSuccessLogin);
     }
 });
