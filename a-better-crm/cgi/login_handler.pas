@@ -155,14 +155,21 @@ begin
       begin
         if ARequest.QueryFields.Values['id'] = (lArray.Objects[I] as TJsonObject).Strings['id'] then
         begin
-          (* If the last time the user logged in was less than 5 seconds,
+          (* If the last time the user logged in was less than 10 seconds,
              we don't force him to re-login, otherwise the user is forced
              to enter user/password again *)
           lLastLogin := 0;
           if (lArray.Objects[I] as TJsonObject).IndexOfName('lastlogin') <> -1 then
             lLastLogin := (lArray.Objects[I] as TJsonObject).Floats['lastlogin'];
-          if IncSecond(lLastLogin, 5) > now then
-            lAllow := true
+          if IncSecond(lLastLogin, 10) > now then
+          begin
+            lAllow := true;
+            (* here I call authenticate to update the lastlogin variable*)
+            (lArray.Objects[I] as TJsonObject).Floats['lastlogin'] := Now;
+            (* update the json file *)
+            lStr.Text := lJSON.AsJSON;
+            lStr.SaveToFile(lFile);
+          end
           else
             lMsg := 'Session expired.';
 
