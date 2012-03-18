@@ -1,0 +1,101 @@
+{
+    "id": "ExtBox1-ext-gen4576",
+    "type": "tabpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "width": 400,
+        "activeTab": 0,
+        "designer|userClassName": "MainTabPanel",
+        "designer|userAlias": "maintabpanel"
+    },
+    "customConfigs": [],
+    "designerId": "7da1f363-10fc-44a5-82e7-555e69ac8f42",
+    "$viewOrder": 7,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen4585",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "users-tab",
+                "title": "Users",
+                "designer|userClassName": "MyPanel"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen4594",
+                    "type": "tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "TabConfig",
+                        "loadMask": null
+                    },
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "loadMask",
+                            "type": "string"
+                        }
+                    ],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen4599",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "customers-tab",
+                "frameHeader": false,
+                "title": "Customers",
+                "designer|userClassName": "MyPanel1"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen4608",
+                    "type": "tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "TabConfig1",
+                        "loadMask": null
+                    },
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "loadMask",
+                            "type": "string"
+                        }
+                    ],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,157 @@
+{
+    "id": "ExtBox1-ext-gen16544",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "User"
+        ],
+        "stores": [
+            "Users"
+        ],
+        "views": [
+            "UsersGrid"
+        ],
+        "designer|init": "",
+        "designer|launch": "",
+        "designer|userClassName": "User"
+    },
+    "customConfigs": [],
+    "designerId": "911f1650-5f0a-40e5-85ba-0e0276fce942",
+    "$viewOrder": 0,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen16871",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "saveSession",
+                "implHandler": "Ext.util.Cookies.set('loggedIn', true);",
+                "designer|userClassName": "saveSession"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen17050",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "deleteSession",
+                "implHandler": "Ext.util.Cookies.set('loggedIn', false);\n",
+                "designer|userClassName": "deleteSession"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen17228",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getUser",
+                "implHandler": "var user = new Ext.ModelManager.getModel({\n    loggedIn : false\n}, 'User');\n\nuser.loggedIn = Ext.util.Cookies.get('loggedIn');\n\nreturn user;",
+                "designer|userClassName": "getUser"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen9486",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeleteClick",
+                "implHandler": "Ext.Msg.show({\n    title:'Delete record?',\n    msg: 'Please configrm',\n    buttons: Ext.Msg.YESNO,\n    icon: Ext.Msg.QUESTION,\n    fn: function(btn, text) {\n        if(btn == 'yes') {\n            record =  button.up('gridpanel').getSelectionModel().getSelection()[0];\n            var store = this.getUsersStore();\n            store.remove(record);\n            store.sync();\n        }\n    },\n    scope: this\n});  ",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "button[id=btnUserDelete]",
+                "designer|userClassName": "onDeleteClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8586",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onInsertClick",
+                "implHandler": "var grid = button.up('gridpanel');\n\n// get an instance of UserProperties controller and call its insert method.\nthis.getController('MyApp.controller.UserProperties').insert(grid);  ",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "button[id=btnUserInsert]",
+                "designer|userClassName": "onInsertClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen9031",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUpdateClick",
+                "implHandler": "// here we get the selected record in the grid\nvar grid = button.up('gridpanel');\nvar user =  grid.getSelectionModel().getSelection()[0];\n\n// get an instance of UserProperties controller and call its edit method.\nthis.getController('MyApp.controller.UserProperties').edit(user, grid);",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "button[id=btnUserUpdate]",
+                "designer|userClassName": "onUpdateClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen9939",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRefreshClick",
+                "implHandler": "this.getUsersStore().load();  ",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "button[id=btnUserRefresh]",
+                "designer|userClassName": "onRefreshClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

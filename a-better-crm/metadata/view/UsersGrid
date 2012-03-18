@@ -1,0 +1,180 @@
+{
+    "id": "ExtBox1-ext-gen8344",
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "height": null,
+        "id": "usersgrid",
+        "width": null,
+        "frameHeader": false,
+        "title": "User administration",
+        "forceFit": true,
+        "store": "Users",
+        "designer|userClassName": "UsersGrid",
+        "designer|userAlias": "usersgrid"
+    },
+    "customConfigs": [],
+    "designerId": "f9786c7f-7c26-407e-a1dd-4f2fd1298205",
+    "$viewOrder": 3,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen8347",
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "loadMask": "false",
+                "designer|userClassName": "MyGridView"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8350",
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "width": 400,
+                "designer|userClassName": "MyToolbar1",
+                "dock": "top"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen8355",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "btnUserUpdate",
+                        "icon": "icons/edit.png",
+                        "text": "Edit",
+                        "designer|userClassName": "MyButton3",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen8360",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "btnUserInsert",
+                        "icon": "icons/insert.png",
+                        "text": "Insert",
+                        "designer|userClassName": "MyButton2",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen8365",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "btnUserDelete",
+                        "icon": "icons/delete.png",
+                        "text": "Delete",
+                        "designer|userClassName": "MyButton4",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen8370",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "btnUserRefresh",
+                        "icon": "icons/refresh.png",
+                        "text": "Refresh",
+                        "designer|userClassName": "MyButton5",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen8375",
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "id",
+                "text": "Id",
+                "designer|userClassName": "MyColumn1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8381",
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "username",
+                "text": "Username",
+                "designer|userClassName": "MyColumn3"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8384",
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "password",
+                "text": "Password",
+                "designer|userClassName": "MyColumn4"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

@@ -1,0 +1,105 @@
+{
+    "id": "ExtBox1-ext-gen11656",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "stores": [
+            "Users"
+        ],
+        "views": [
+            "UserProperties"
+        ],
+        "designer|init": "",
+        "designer|launch": "",
+        "designer|userClassName": "UserProperties",
+        "designer|userAlias": "userproperties"
+    },
+    "customConfigs": [],
+    "designerId": "357144a4-d8c0-4bb5-bff8-2f60007de19f",
+    "$viewOrder": 5,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen14506",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "insert",
+                "designer|params": [
+                    "grid"
+                ],
+                "implHandler": "// create an instance of UserProperties form\nvar cp = Ext.create('MyApp.view.UserProperties', {});\n\n// When the user clicks the Ok button, form's data must be saved,\n// but should it do and Insert or an Update?.\n// to avoid the confusion, I'll create a variable named\n// mode, and assign Update or Insert depending on\n// what function is displaying the form. In this case\n// the function is edit, so, the variable value is Insert.\n\nmode=\"Insert\";\nthis.getUsersStore().setGrid(grid);\n\n// Show the form\ncp.show();",
+                "designer|userClassName": "insert"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen15650",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOkClick",
+                "implHandler": "var win = button.up('window');\nfrm = win.down('form').getForm();\nvar store = this.getUsersStore();    \nif(mode==\"Insert\") {\n    user = frm.getValues();\n    store.insert(0, user);\n}\nelse\n{ \n    user = frm.getRecord();\n    frm.updateRecord(user);\n}\nstore.sync();\nwin.destroy();",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "button[id=btnUserOk]",
+                "designer|userClassName": "onOkClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen15763",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCancelClick",
+                "implHandler": "button.up('window').destroy();",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "button[id=btnUserCancel]",
+                "designer|userClassName": "onCancelClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen18244",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "edit",
+                "designer|params": [
+                    "user, grid"
+                ],
+                "implHandler": "// create an instance of UserProperties form\nvar cp = Ext.create('MyApp.view.UserProperties', {});\n\ncp.down('form').getForm().loadRecord(user);\n\n// When the user clicks the Ok button, form's data must be saved,\n// but should it do and Insert or an Update?.\n// to avoid the confusion, I'll create a variable named\n// mode, and assign Update or Insert depending on\n// what function is displaying the form. In this case\n// the function is edit, so, the variable value is Update.\n\nmode=\"Update\";\nthis.getUsersStore().setGrid(grid);\n\n// Show the form\ncp.show();",
+                "designer|userClassName": "edit"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "id": "ExtBox1-ext-gen6902",
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": null,
+        "stores": null,
+        "views": [
+            "MyViewport"
+        ],
+        "designer|launch": "var user = this.getController('MyApp.controller.User').getUser();\n\nif(user.loggedIn == \"false\") {\n    Ext.create('MyApp.view.LoginForm', {}).show();\n}\nelse\n{\n    this.getController('MyApp.controller.Main').showMainView();\n}\n",
+        "autoCreateViewport": true,
+        "name": "MyApp"
+    },
+    "customConfigs": [],
+    "designerId": "application",
+    "$viewOrder": 0,
+    "expanded": true
+}

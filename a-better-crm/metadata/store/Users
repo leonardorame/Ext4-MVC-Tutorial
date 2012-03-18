@@ -1,0 +1,91 @@
+{
+    "id": "ExtBox1-ext-gen11662",
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "storeId": "Users",
+        "model": "User",
+        "designer|userClassName": "Users"
+    },
+    "customConfigs": [],
+    "designerId": "23d45ffc-9e68-48bc-8ed0-0386cdc91a1c",
+    "$viewOrder": 1,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen11665",
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": "{read: \"/cgi-bin/a_better_crm/users/read\",\ncreate: \"/cgi-bin/a_better_crm/users/insert\",\nupdate: \"/cgi-bin/a_better_crm/users/update\",\ndestroy: \"/cgi-bin/a_better_crm/users/delete\"\n}\n",
+                "url": "",
+                "designer|userClassName": "MyAjaxProxy"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen11668",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": "id",
+                        "root": "root",
+                        "designer|userClassName": "MyJsonReader"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen11671",
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreWrite",
+                "implHandler": "        var customer = operation.getRecords();\n        gridRef.getSelectionModel().select(customer, false);",
+                "name": "write",
+                "scope": "me",
+                "designer|userClassName": "onJsonstoreWrite"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen11674",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setGrid",
+                "designer|params": [
+                    "grid"
+                ],
+                "implHandler": "gridRef = grid;",
+                "designer|userClassName": "setGrid"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

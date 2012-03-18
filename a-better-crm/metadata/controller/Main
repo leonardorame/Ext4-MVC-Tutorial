@@ -1,0 +1,79 @@
+{
+    "id": "ExtBox1-ext-gen22625",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": null,
+        "stores": [
+            "Customers",
+            "Users"
+        ],
+        "views": [
+            "MainToolbar",
+            "MainTabPanel",
+            "CustomerGrid",
+            "UsersGrid"
+        ],
+        "designer|init": "",
+        "designer|launch": "",
+        "designer|userClassName": "Main"
+    },
+    "customConfigs": [],
+    "designerId": "71b302e4-f5f1-4d85-80fd-769279213c74",
+    "$viewOrder": 2,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen22922",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showMainView",
+                "implHandler": "mainToolBar = Ext.create('MyApp.view.MainToolbar', {});\nmainView = Ext.create('MyApp.view.MainTabPanel', {flex: 1});\nvar customerGrid = Ext.create('MyApp.view.CustomerGrid', {flex: 1});\nvar usersGrid =  Ext.create('MyApp.view.UsersGrid', {flex: 1});\n// to be able to use \"this.getViewport()\" the a ref has to be added\n// please take a look at the refs section of this file.\nvar center_container = this.getViewportmain().down('container[region=center]'); \ncenter_container.add(mainToolBar);\ncenter_container.add(mainView);\nvar customersTab = Ext.getCmp('customers-tab');\nvar usersTab = Ext.getCmp('users-tab');\ncustomersTab.add(customerGrid);\nusersTab.add(usersGrid);\n// load the stores\nthis.getCustomersStore().load();\nthis.getUsersStore().load();",
+                "designer|userClassName": "showMainView"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen23035",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "destroyAll",
+                "implHandler": "mainToolBar.destroy();\nmainView.destroy();\nthis.destroy();",
+                "designer|userClassName": "destroyAll"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen24960",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "viewportmain",
+                "selector": "viewportmain",
+                "designer|userClassName": "viewportmain"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

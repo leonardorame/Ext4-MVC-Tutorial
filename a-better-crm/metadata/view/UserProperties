@@ -1,0 +1,169 @@
+{
+    "id": "ExtBox1-ext-gen12118",
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoRender": false,
+        "height": 181,
+        "width": 421,
+        "layout": "fit",
+        "title": "User properties",
+        "modal": true,
+        "designer|userClassName": "UserProperties",
+        "designer|userAlias": "userproperties"
+    },
+    "customConfigs": [],
+    "designerId": "553eadd7-25eb-4a07-8444-fd1424450e20",
+    "$viewOrder": 6,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen12121",
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ui": "footer",
+                "designer|userClassName": "MyToolbar3",
+                "dock": "bottom"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen12126",
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFill2",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen12131",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "btnUserOk",
+                        "text": "Ok",
+                        "designer|userClassName": "MyButton6",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen12136",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "btnUserCancel",
+                        "text": "Cancel",
+                        "designer|userClassName": "MyButton7",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen12141",
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "frame": true,
+                "id": "userproperties",
+                "width": null,
+                "bodyPadding": 10,
+                "frameHeader": false,
+                "preventHeader": true,
+                "title": null,
+                "url": null,
+                "designer|userClassName": "CustomerProperties",
+                "designer|userAlias": "customerproperties",
+                "dock": null
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen12146",
+                    "type": "displayfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "id",
+                        "value": null,
+                        "fieldLabel": "Id",
+                        "designer|userClassName": "MyDisplayField"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen12153",
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "username",
+                        "fieldLabel": "User name",
+                        "designer|userClassName": "MyTextField2",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen12160",
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "password",
+                        "fieldLabel": "Password",
+                        "designer|userClassName": "MyTextField3",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}
