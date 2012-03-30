@@ -96,9 +96,10 @@ Ext.define('MyApp.view.CustomerProperties', {
                         {
                             xtype: 'radiogroup',
                             height: 53,
+                            width: 200,
                             id: '',
                             layout: {
-                                align: 'stretch',
+                                align: 'fit',
                                 type: 'vbox'
                             },
                             fieldLabel: 'Gender',
