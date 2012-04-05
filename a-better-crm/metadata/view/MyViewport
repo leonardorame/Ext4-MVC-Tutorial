@@ -12,7 +12,7 @@
         "layout": "border",
         "designer|userClassName": "MyViewport",
         "designer|userAlias": "viewportmain",
-        "xtype": "viewportmain"
+        "xtype": null
     },
     "customConfigs": [
         {
@@ -23,7 +23,7 @@
     ],
     "designerId": "228c5040-742b-4412-a518-8b5bfd5863fd",
     "$viewOrder": 0,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen5006",

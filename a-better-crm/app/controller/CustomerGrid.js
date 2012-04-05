@@ -25,23 +25,8 @@ Ext.define('MyApp.controller.CustomerGrid', {
     ],
     views: [
         'CustomerGrid'
-    ],
-    init: function() {
-        this.control({
-            "button[id=btnEdit]": {
-                click: this.onEditClick
-            },
-            "button[id=btnRefresh]": {
-                click: this.onRefreshClick
-            },
-            "button[id=btnInsert]": {
-                click: this.onInsertClick
-            },
-            "button[id=btnDelete]": {
-                click: this.onDeleteClick
-            }
-        });
-    },
+    ]
+,
 
     onEditClick: function(button, e, options) {
         // here we get the selected record in the grid
@@ -79,6 +64,28 @@ Ext.define('MyApp.controller.CustomerGrid', {
             },
             scope: this
         });
+    },
+
+    init: function() {
+        this.control({
+            "button[id=btnEdit]": {
+                click: this.onEditClick
+            },
+            "button[id=btnRefresh]": {
+                click: this.onRefreshClick
+            },
+            "button[id=btnInsert]": {
+                click: this.onInsertClick
+            },
+            "button[id=btnDelete]": {
+                click: this.onDeleteClick
+            }
+        });
+
+    },
+
+    onLaunch: function() {
+
     },
 
     onControllerClickStub: function() {

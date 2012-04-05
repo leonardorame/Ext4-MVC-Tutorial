@@ -7,6 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|initialView": false,
         "height": 250,
         "width": 400,
         "activeTab": 0,
@@ -53,6 +54,7 @@
                             "type": "string"
                         }
                     ],
+                    "iconCls": "icon-tab-bar",
                     "expanded": true
                 }
             ]
@@ -93,6 +95,7 @@
                             "type": "string"
                         }
                     ],
+                    "iconCls": "icon-tab-bar",
                     "expanded": true
                 }
             ]

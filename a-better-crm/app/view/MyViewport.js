@@ -20,7 +20,6 @@ Ext.define('MyApp.view.MyViewport', {
     layout: {
         type: 'border'
     },
-    xtype: 'viewportmain',
 
     initComponent: function() {
         var me = this;

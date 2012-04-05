@@ -7,6 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|initialView": false,
         "draggable": true,
         "floating": true,
         "frame": true,

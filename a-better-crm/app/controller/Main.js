@@ -25,18 +25,15 @@ Ext.define('MyApp.controller.Main', {
         'MainTabPanel',
         'CustomerGrid',
         'UsersGrid'
-    ],
+    ]
+,
+
     refs: [
         {
             ref: 'viewportmain',
             selector: 'viewportmain'
         }
     ],
-
-    init: function() {
-        this.control({
-        });
-    },
 
     showMainView: function() {
         mainToolBar = Ext.create('MyApp.view.MainToolbar', {});
@@ -61,6 +58,14 @@ Ext.define('MyApp.controller.Main', {
         mainToolBar.destroy();
         mainView.destroy();
         this.destroy();
+    },
+
+    init: function() {
+
+    },
+
+    onLaunch: function() {
+
     }
 
 });

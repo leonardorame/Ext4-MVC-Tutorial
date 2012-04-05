@@ -22,17 +22,8 @@ Ext.define('MyApp.controller.CustomerProperties', {
     ],
     views: [
         'CustomerProperties'
-    ],
-    init: function() {
-        this.control({
-            "button[id=btnOk]": {
-                click: this.onOkClick
-            },
-            "button[id=btnCancel]": {
-                click: this.onCancelClick
-            }
-        });
-    },
+    ]
+,
 
     onOkClick: function(button, e, options) {
         var win = button.up('window');
@@ -91,6 +82,22 @@ Ext.define('MyApp.controller.CustomerProperties', {
 
         // Show the form
         cp.show();
+    },
+
+    init: function() {
+        this.control({
+            "button[id=btnOk]": {
+                click: this.onOkClick
+            },
+            "button[id=btnCancel]": {
+                click: this.onCancelClick
+            }
+        });
+
+    },
+
+    onLaunch: function() {
+
     },
 
     onControllerClickStub: function() {

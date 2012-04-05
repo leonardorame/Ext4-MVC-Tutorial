@@ -18,7 +18,7 @@
         "cssPath": ""
     },
     "xdsVersion": "2.0.0",
-    "xdsBuild": "311",
+    "xdsBuild": "360",
     "framework": "ext40",
     "topInstanceFileMap": {
         "228c5040-742b-4412-a518-8b5bfd5863fd": {
@@ -171,6 +171,6 @@
         "data": true,
         "model": false,
         "component": true,
-        "controller": true
+        "controller": false
     }
 }

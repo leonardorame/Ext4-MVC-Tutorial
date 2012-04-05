@@ -24,23 +24,8 @@ Ext.define('MyApp.controller.User', {
     ],
     views: [
         'UsersGrid'
-    ],
-    init: function() {
-        this.control({
-            "button[id=btnUserDelete]": {
-                click: this.onDeleteClick
-            },
-            "button[id=btnUserInsert]": {
-                click: this.onInsertClick
-            },
-            "button[id=btnUserUpdate]": {
-                click: this.onUpdateClick
-            },
-            "button[id=btnUserRefresh]": {
-                click: this.onRefreshClick
-            }
-        });
-    },
+    ]
+,
 
     onDeleteClick: function(button, e, options) {
         Ext.Msg.show({
@@ -80,41 +65,49 @@ Ext.define('MyApp.controller.User', {
         this.getUsersStore().load();  
     },
 
-    saveSession: function(userId) {
-        Ext.util.Cookies.set('a_better_crm_userid', userId);
+    saveSession: function() {
+        Ext.util.Cookies.set('loggedIn', true);
     },
 
     deleteSession: function() {
-        Ext.util.Cookies.clear('a_better_crm_userid');
+        Ext.util.Cookies.set('loggedIn', false);
+
     },
 
-    getUser: function(successLoginHandler) {
+    getUser: function() {
         var user = new Ext.ModelManager.getModel({
             loggedIn : false
         }, 'User');
 
-        user.id = Ext.util.Cookies.get('a_better_crm_userid');
-        user.loggedIn = "false";
-    
-        Ext.Ajax.request({
-                url : '/cgi-bin/a_better_crm/users/controlExpiration?id=' + user.id,
-                method: 'GET',
-                 success: function ( result, request ) {
-                    var jsonData = Ext.JSON.decode(result.responseText);
+        user.loggedIn = Ext.util.Cookies.get('loggedIn');
 
-                    if(jsonData.success == false) 
-                    { 
-                      Ext.create('MyApp.view.LoginForm', {}).show();
-                    }
-                    else
-                    {
-                      successLoginHandler();
-                    }
-             }
+        return user;
+    },
+
+    init: function() {
+        this.control({
+            "button[id=btnUserDelete]": {
+                click: this.onDeleteClick
+            },
+            "button[id=btnUserInsert]": {
+                click: this.onInsertClick
+            },
+            "button[id=btnUserUpdate]": {
+                click: this.onUpdateClick
+            },
+            "button[id=btnUserRefresh]": {
+                click: this.onRefreshClick
+            }
         });
+
+    },
+
+    onLaunch: function() {
+
     },
 
     onControllerClickStub: function() {
+
     }
 
 });

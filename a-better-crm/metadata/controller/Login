@@ -7,19 +7,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "stores": [],
         "views": [
             "LoginForm",
             "MainToolbar"
         ],
-        "designer|init": "",
-        "designer|launch": "",
         "designer|userClassName": "Login"
     },
     "customConfigs": [],
     "designerId": "7051e9b8-90f2-4246-b6c1-deb8e94fc3f8",
     "$viewOrder": 1,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen21717",
@@ -57,6 +54,38 @@
                 "designer|targetType": "Ext.button.Button",
                 "designer|controlQuery": "maintoolbar button[id=btnLogout]",
                 "designer|userClassName": "onLogoutClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3041",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": "",
+                "designer|userClassName": "init"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3047",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLaunch",
+                "implHandler": "",
+                "designer|userClassName": "onLaunch"
             },
             "customConfigs": [],
             "expanded": true

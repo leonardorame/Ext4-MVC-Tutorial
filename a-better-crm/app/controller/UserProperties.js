@@ -22,17 +22,8 @@ Ext.define('MyApp.controller.UserProperties', {
     ],
     views: [
         'UserProperties'
-    ],
-    init: function() {
-        this.control({
-            "button[id=btnUserOk]": {
-                click: this.onOkClick
-            },
-            "button[id=btnUserCancel]": {
-                click: this.onCancelClick
-            }
-        });
-    },
+    ]
+,
 
     onOkClick: function(button, e, options) {
         var win = button.up('window');
@@ -91,6 +82,22 @@ Ext.define('MyApp.controller.UserProperties', {
 
         // Show the form
         cp.show();
+    },
+
+    init: function() {
+        this.control({
+            "button[id=btnUserOk]": {
+                click: this.onOkClick
+            },
+            "button[id=btnUserCancel]": {
+                click: this.onCancelClick
+            }
+        });
+
+    },
+
+    onLaunch: function() {
+
     },
 
     onControllerClickStub: function() {

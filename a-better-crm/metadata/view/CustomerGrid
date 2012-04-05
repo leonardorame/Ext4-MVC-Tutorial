@@ -7,6 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|initialView": false,
         "autoShow": true,
         "height": null,
         "id": "customergrid",

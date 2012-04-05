@@ -13,15 +13,13 @@
         "views": [
             "CustomerProperties"
         ],
-        "designer|init": "",
-        "designer|launch": "",
         "designer|userClassName": "CustomerProperties",
         "designer|userAlias": "customerproperties"
     },
     "customConfigs": [],
     "designerId": "442b148a-aee3-4f50-9ad9-05cd46e80fb7",
     "$viewOrder": 4,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen19465",
@@ -97,6 +95,38 @@
                 ],
                 "implHandler": "// create an instance of CustomerProperties form\nvar cp = Ext.create('MyApp.view.CustomerProperties', {});\n\n// When the user clicks the Ok button, form's data must be saved,\n// but should it do and Insert or an Update?.\n// to avoid the confusion, I'll create a variable named\n// mode, and assign Update or Insert depending on\n// what function is displaying the form. In this case\n// the function is edit, so, the variable value is Insert.\n\nmode=\"Insert\";\nthis.getCustomersStore().setGrid(grid);\n\n// Show the form\ncp.show();",
                 "designer|userClassName": "insert"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3077",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": "",
+                "designer|userClassName": "init"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3083",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLaunch",
+                "implHandler": "",
+                "designer|userClassName": "onLaunch"
             },
             "customConfigs": [],
             "expanded": true

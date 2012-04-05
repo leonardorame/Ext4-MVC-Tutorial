@@ -7,17 +7,40 @@
     },
     "codeClass": null,
     "userConfig": {
-        "models": null,
-        "stores": null,
         "views": [
             "MyViewport"
         ],
-        "designer|launch": "var user = this.getController('MyApp.controller.User').getUser();\n\nif(user.loggedIn == \"false\") {\n    Ext.create('MyApp.view.LoginForm', {}).show();\n}\nelse\n{\n    this.getController('MyApp.controller.Main').showMainView();\n}\n",
         "autoCreateViewport": true,
-        "name": "MyApp"
+        "name": "MyApp",
+        "controllers": [
+            "User",
+            "Login",
+            "Main",
+            "CustomerGrid",
+            "CustomerProperties",
+            "UserProperties"
+        ]
     },
     "customConfigs": [],
     "designerId": "application",
     "$viewOrder": 0,
-    "expanded": true
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen3022",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": "var user = this.getController('MyApp.controller.User').getUser();\n\nif(user.loggedIn == \"false\") {\n    Ext.create('MyApp.view.LoginForm', {}).show();\n}\nelse\n{\n    this.getController('MyApp.controller.Main').showMainView();\n}\n",
+                "designer|userClassName": "launch"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
 }

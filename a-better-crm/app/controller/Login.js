@@ -16,23 +16,11 @@
 Ext.define('MyApp.controller.Login', {
     extend: 'Ext.app.Controller',
 
-    stores: [
-        
-    ],
     views: [
         'LoginForm',
         'MainToolbar'
-    ],
-    init: function() {
-        this.control({
-            "loginform button[id=btnSubmit]": {
-                click: this.onLoginClick
-            },
-            "maintoolbar button[id=btnLogout]": {
-                click: this.onLogoutClick
-            }
-        });
-    },
+    ]
+,
 
     onLoginClick: function(button, e, options) {
         var win = button.up('loginform');
@@ -41,9 +29,7 @@ Ext.define('MyApp.controller.Login', {
             success: function(form, action){
                 var UserController = this.getController('MyApp.controller.User');
                 this.getController('MyApp.controller.Main').showMainView();
-                var jsonData = Ext.JSON.decode(action.response.responseText);
-                var userId = jsonData.data.id;
-                UserController.saveSession(userId); 
+                UserController.saveSession(); 
                 win.destroy();
             },
             failure: function(form, action){
@@ -68,6 +54,22 @@ Ext.define('MyApp.controller.Login', {
         this.getController('MyApp.controller.User').deleteSession(); 
         Ext.create('MyApp.view.LoginForm', {}).show();
 
+
+    },
+
+    init: function() {
+        this.control({
+            "loginform button[id=btnSubmit]": {
+                click: this.onLoginClick
+            },
+            "maintoolbar button[id=btnLogout]": {
+                click: this.onLogoutClick
+            }
+        });
+
+    },
+
+    onLaunch: function() {
 
     },
 

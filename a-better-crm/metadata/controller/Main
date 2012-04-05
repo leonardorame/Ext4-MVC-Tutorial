@@ -7,7 +7,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "models": null,
         "stores": [
             "Customers",
             "Users"
@@ -18,14 +17,12 @@
             "CustomerGrid",
             "UsersGrid"
         ],
-        "designer|init": "",
-        "designer|launch": "",
         "designer|userClassName": "Main"
     },
     "customConfigs": [],
     "designerId": "71b302e4-f5f1-4d85-80fd-769279213c74",
     "$viewOrder": 2,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen22922",
@@ -71,6 +68,38 @@
                 "ref": "viewportmain",
                 "selector": "viewportmain",
                 "designer|userClassName": "viewportmain"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3053",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": "",
+                "designer|userClassName": "init"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3059",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLaunch",
+                "implHandler": "",
+                "designer|userClassName": "onLaunch"
             },
             "customConfigs": [],
             "expanded": true

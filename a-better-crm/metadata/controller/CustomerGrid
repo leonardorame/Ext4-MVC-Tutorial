@@ -16,15 +16,13 @@
         "views": [
             "CustomerGrid"
         ],
-        "designer|init": "",
-        "designer|launch": "",
         "designer|userClassName": "CustomerGrid",
         "designer|userAlias": "customergrid"
     },
     "customConfigs": [],
     "designerId": "7d2b1f36-2fff-42b8-bf43-e69b2b859ec6",
     "$viewOrder": 3,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen10874",
@@ -102,6 +100,38 @@
                 "designer|targetType": "Ext.button.Button",
                 "designer|controlQuery": "button[id=btnDelete]",
                 "designer|userClassName": "onDeleteClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3065",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": "",
+                "designer|userClassName": "init"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3071",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLaunch",
+                "implHandler": "",
+                "designer|userClassName": "onLaunch"
             },
             "customConfigs": [],
             "expanded": true
