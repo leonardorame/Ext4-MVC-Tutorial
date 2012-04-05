@@ -95,12 +95,13 @@ Ext.define('MyApp.controller.User', {
 
         user.id = Ext.util.Cookies.get('a_better_crm_userid');
         user.loggedIn = "false";
-
+    
         Ext.Ajax.request({
-        url : '/cgi-bin/a_better_crm/users/controlExpiration?id=' + user.id,
+                url : '/cgi-bin/a_better_crm/users/controlExpiration?id=' + user.id,
                 method: 'GET',
-                success: function ( result, request ) {
+                 success: function ( result, request ) {
                     var jsonData = Ext.JSON.decode(result.responseText);
+
                     if(jsonData.success == false) 
                     { 
                       Ext.create('MyApp.view.LoginForm', {}).show();
@@ -111,7 +112,6 @@ Ext.define('MyApp.controller.User', {
                     }
              }
         });
-        return user;
     },
 
     onControllerClickStub: function() {

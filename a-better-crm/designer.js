@@ -41,6 +41,6 @@ Ext.application({
         var onSuccessLogin = function(){
           me.getController('MyApp.controller.Main').showMainView();
         }
-        var user = this.getController('MyApp.controller.User').getUser(onSuccessLogin);
+        this.getController('MyApp.controller.User').getUser(onSuccessLogin);
     }
 });
