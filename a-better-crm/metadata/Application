@@ -36,7 +36,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "launch",
-                "implHandler": "var user = this.getController('MyApp.controller.User').getUser();\n\nif(user.loggedIn == \"false\") {\n    Ext.create('MyApp.view.LoginForm', {}).show();\n}\nelse\n{\n    this.getController('MyApp.controller.Main').showMainView();\n}\n",
+                "implHandler": "        me = this;\n        var onSuccessLogin = function(){\n          me.getController('MyApp.controller.Main').showMainView();\n        }\n        this.getController('MyApp.controller.User').getUser(onSuccessLogin);",
                 "designer|userClassName": "launch"
             },
             "customConfigs": [],

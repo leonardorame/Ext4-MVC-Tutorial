@@ -33,7 +33,10 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "saveSession",
-                "implHandler": "Ext.util.Cookies.set('loggedIn', true);",
+                "designer|params": [
+                    "userId"
+                ],
+                "implHandler": " Ext.util.Cookies.set('a_better_crm_userid', userId);\n",
                 "designer|userClassName": "saveSession"
             },
             "customConfigs": [],
@@ -49,7 +52,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "deleteSession",
-                "implHandler": "Ext.util.Cookies.set('loggedIn', false);\n",
+                "implHandler": "  Ext.util.Cookies.clear('a_better_crm_userid');\n\n",
                 "designer|userClassName": "deleteSession"
             },
             "customConfigs": [],
@@ -65,7 +68,10 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "getUser",
-                "implHandler": "var user = new Ext.ModelManager.getModel({\n    loggedIn : false\n}, 'User');\n\nuser.loggedIn = Ext.util.Cookies.get('loggedIn');\n\nreturn user;",
+                "designer|params": [
+                    "successLoginHandler"
+                ],
+                "implHandler": "        var user = new Ext.ModelManager.getModel({\n            loggedIn : false\n        }, 'User');\n\n        user.id = Ext.util.Cookies.get('a_better_crm_userid');\n        user.loggedIn = \"false\";\n    \n        Ext.Ajax.request({\n                url : '/cgi-bin/a_better_crm/users/controlExpiration?id=' + user.id,\n                method: 'GET',\n                 success: function ( result, request ) {\n                    var jsonData = Ext.JSON.decode(result.responseText);\n\n                    if(jsonData.success == false) \n                    { \n                      Ext.create('MyApp.view.LoginForm', {}).show();\n                    }\n                    else\n                    {\n                      successLoginHandler();\n                    }\n             }\n        });",
                 "designer|userClassName": "getUser"
             },
             "customConfigs": [],

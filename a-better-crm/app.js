@@ -33,16 +33,11 @@ Ext.application({
     ],
 
     launch: function() {
-        var user = this.getController('MyApp.controller.User').getUser();
-
-        if(user.loggedIn == "false") {
-            Ext.create('MyApp.view.LoginForm', {}).show();
+        me = this;
+        var onSuccessLogin = function(){
+            me.getController('MyApp.controller.Main').showMainView();
         }
-        else
-        {
-            this.getController('MyApp.controller.Main').showMainView();
-        }
-
+        this.getController('MyApp.controller.User').getUser(onSuccessLogin);
     }
 
 });

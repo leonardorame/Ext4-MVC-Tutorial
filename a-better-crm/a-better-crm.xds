@@ -170,7 +170,7 @@
     "expandedState": {
         "data": true,
         "model": false,
-        "component": true,
-        "controller": false
+        "component": false,
+        "controller": true
     }
 }
