@@ -86,6 +86,7 @@
                 "designer|userClassName": "init"
             },
             "customConfigs": [],
+            "iconCls": "icon-basic-function",
             "expanded": true
         },
         {
@@ -102,6 +103,7 @@
                 "designer|userClassName": "onLaunch"
             },
             "customConfigs": [],
+            "iconCls": "icon-basic-function",
             "expanded": true
         }
     ]

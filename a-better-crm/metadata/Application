@@ -24,6 +24,7 @@
     "customConfigs": [],
     "designerId": "application",
     "$viewOrder": 0,
+    "iconCls": "icon-application",
     "expanded": true,
     "cn": [
         {
@@ -40,6 +41,7 @@
                 "designer|userClassName": "launch"
             },
             "customConfigs": [],
+            "iconCls": "icon-basic-function",
             "expanded": true
         }
     ]

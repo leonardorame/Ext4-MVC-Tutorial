@@ -15,10 +15,11 @@
         "saveOnDeploy": false,
         "appName": "MyApp",
         "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true",
+        "resources": [],
         "cssPath": ""
     },
     "xdsVersion": "2.0.0",
-    "xdsBuild": "360",
+    "xdsBuild": "363",
     "framework": "ext40",
     "topInstanceFileMap": {
         "228c5040-742b-4412-a518-8b5bfd5863fd": {
@@ -170,7 +171,7 @@
     "expandedState": {
         "data": true,
         "model": false,
-        "component": false,
-        "controller": true
+        "component": true,
+        "controller": false
     }
 }

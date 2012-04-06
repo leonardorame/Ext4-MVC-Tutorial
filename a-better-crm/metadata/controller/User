@@ -21,7 +21,7 @@
     "customConfigs": [],
     "designerId": "911f1650-5f0a-40e5-85ba-0e0276fce942",
     "$viewOrder": 0,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen16871",
@@ -171,6 +171,7 @@
                 "designer|userClassName": "init"
             },
             "customConfigs": [],
+            "iconCls": "icon-basic-function",
             "expanded": true
         },
         {
@@ -187,6 +188,7 @@
                 "designer|userClassName": "onLaunch"
             },
             "customConfigs": [],
+            "iconCls": "icon-basic-function",
             "expanded": true
         }
     ]
