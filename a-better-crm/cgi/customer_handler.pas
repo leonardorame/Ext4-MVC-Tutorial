@@ -123,11 +123,19 @@ begin
   lResponse :=TJSONObject.Create;
   try
     try
+
       lJSON := lJSonParser.Parse as TJSonObject;
       lArray := lJSON.Arrays['root'];
       (* Assign values to local variables *)
       lResult := TJSONParser.Create(ARequest.Content).Parse as TJSONObject;
+
       lResult.Integers['id'] := Random(1000);
+
+      //if lResult.indexofname('active') > -1 then
+      //  raise exception.create('aaa');
+        if lResult.Nulls['active'] then
+          lResult.Booleans['active'] := true;
+
       lArray.Add(lResult);
       (* Save the file *)
       lStr.Text:= lJSON.AsJSON;
