@@ -31,7 +31,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onOkClick",
-                "implHandler": "        var win = button.up('window');\n        frm = win.down('form').getForm();\n        var store = this.getCustomersStore();    \n        if(mode==\"Insert\") {\n            customer = frm.getValues();\n            store.insert(0, customer);\n        }\n        else\n        { \n            customer = frm.getRecord();\n            frm.updateRecord(customer);\n        }\n        store.sync();\n        win.destroy();",
+                "implHandler": "var win = button.up('window');\nfrm = win.down('form').getForm();\nvar store = this.getCustomersStore();    \nif(mode==\"Insert\") {\n    customer = frm.getValues();\n    store.insert(0, customer);\n}\nelse\n{ \n    customer = frm.getRecord();\n    frm.updateRecord(customer);\n}\nstore.sync();\nwin.destroy();",
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",

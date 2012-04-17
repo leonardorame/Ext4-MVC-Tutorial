@@ -111,7 +111,7 @@
                 "dock": null
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen4310",
@@ -195,6 +195,7 @@
                         "fieldLabel": "Active",
                         "boxLabel": "Customer is active",
                         "checked": true,
+                        "inputValue": "true",
                         "designer|userClassName": "MyCheckbox",
                         "layout|anchor": "100%"
                     },

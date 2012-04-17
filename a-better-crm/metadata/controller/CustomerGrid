@@ -22,7 +22,7 @@
     "customConfigs": [],
     "designerId": "7d2b1f36-2fff-42b8-bf43-e69b2b859ec6",
     "$viewOrder": 3,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen10874",
@@ -74,7 +74,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onInsertClick",
-                "implHandler": "        var grid = button.up('gridpanel');\n\n        // get an instance of CustomerProperties controller and call its insert method.\n        this.getController('MyApp.controller.CustomerProperties').insert(grid);",
+                "implHandler": "var grid = button.up('gridpanel');\n\n// get an instance of CustomerProperties controller and call its insert method.\nthis.getController('MyApp.controller.CustomerProperties').insert(grid);",
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",

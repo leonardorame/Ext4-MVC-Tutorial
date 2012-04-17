@@ -133,8 +133,8 @@ begin
 
       //if lResult.indexofname('active') > -1 then
       //  raise exception.create('aaa');
-        if lResult.Nulls['active'] then
-          lResult.Booleans['active'] := true;
+      if lResult.Nulls['active'] then
+        lResult.Booleans['active'] := false;
 
       lArray.Add(lResult);
       (* Save the file *)

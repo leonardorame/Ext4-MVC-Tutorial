@@ -91,6 +91,7 @@ Ext.define('MyApp.view.CustomerProperties', {
                             fieldLabel: 'Active',
                             boxLabel: 'Customer is active',
                             checked: true,
+                            inputValue: 'true',
                             anchor: '100%'
                         },
                         {
